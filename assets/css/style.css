@@ -1,0 +1,18 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+
+    /* for Slider1 */
+    --slidewidth: 300px;
+    --slideheight: 300px;
+    /* for slider2 */
+    --slidewidth2: 230px;
+    --slideheight2: 300px;
+    /* for slider3 */
+    --slidewidth3: 450px;
+    /* --slidewidth3_1: 300px;
+    --slidewidth3_2: 250px; */
+    --slideheight3: 300px;
+}

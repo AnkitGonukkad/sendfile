@@ -1,0 +1,3136 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="./assets/css/style.css" rel="stylesheet" />
+
+    <style>
+      @font-face {
+        font-family: sofiaproregular;
+        src: url("./assets/fonts/sofiaproregular.woff");
+      }
+
+      @font-face {
+        font-family: sofiaprosemibold;
+        src: url("./assets/fonts/SofiaProSemiBold.woff");
+      }
+
+      .sendquery {
+        animation: pulse 1.5s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        box-shadow: 0px 0px 25px 10px #f05555;
+      }
+
+      @keyframes pulse {
+        0%,
+        100% {
+          background-color: #b20000;
+          box-shadow: 0px 0px 25px 10px #f05555;
+        }
+
+        50% {
+          background-color: #ff0000;
+          box-shadow: 0px 0px 10px 0px #b20000;
+        }
+      }
+      :root {
+
+/* for Slider1 */
+--slidewidth: 300px;
+--slideheight: 300px;
+/* for slider2 */
+--slidewidth2: 230px;
+/* --slideheight2: 300px; */
+/* for slider3 */
+--slidewidth3: 425px;
+/* --slidewidth3_1: 225px; */
+/* --slidewidth3_1: 300px; */
+
+/* --slideheight3: 00px; */
+}
+
+@media screen and (max-width:320px) {
+:root {
+    --slidewidth3: 20rem;
+}
+
+}
+
+@media screen and (max-width:622px) {
+.slider_2_p {
+    padding: 28px;
+    /* --slidewidth2: 400px; */
+
+
+}
+
+}
+
+@media screen and (max-width:825px) and (min-width:330px) {
+:root {
+    --slidewidth3: 23rem;
+}
+
+}
+    </style>
+  </head>
+
+  <body class="selection:text-red">
+    <header class="w-full fixed top-0 z-40 bg-white h-fit">
+      <section class="bg-neutral-700 w-full font-semibold text-white px-2 py-2">
+        <div
+          class="flex justify-between place-items-center *:place-items-center"
+        >
+          <div
+            class="flex *:place-items-center  lg:gap-3 *:gap-2 flex-wrap justify-center w-full lg:w-fit"
+          >
+            <div class="hidden lg:block *:gap-1">
+              <a
+                href="mailto:connect@gonukkad.com"
+                class="block lg:flex place-items-center"
+              >
+                <div class="scale-75">
+                  <i
+                    class="fa-regular fa-envelope bg-[#f26333] p-[5px] rounded-full"
+                  ></i>
+                </div>
+                <div class="text-sm">connect@gonukkad.com</div>
+              </a>
+            </div>
+            <div
+              class="flex place-items-center text-[13px] md:text-base *:gap-1"
+            >
+              <a href="tel:080-692-28600" class="flex place-items-center">
+                <div class="flex items-center scale-75">
+                  <i
+                    class="fa-solid fa-phone scale-75 bg-[#f26333] p-2 rounded-full"
+                  ></i>
+                </div>
+
+                <div class="text-sm">E-Commerce Support : 080-692-28600</div>
+              </a>
+            </div>
+            <div class="flex place-items-center text-[13px] md:text-base">
+              <a href="tel:040-681-52890" class="flex place-items-center">
+                <div class="flex items-center scale-75">
+                  <i
+                    class="fa-solid fa-phone scale-75 bg-[#f26333] p-2 rounded-full"
+                  ></i>
+                </div>
+
+                <div class="text-sm">Merchant Support : 040-681-52890</div>
+              </a>
+            </div>
+            <div class="hidden lg:block *:gap-1">
+              <a
+                href="mailto:connect@gonukkad.com"
+                class="block lg:flex place-items-center"
+              >
+                <div class="scale-75">
+                  <i
+                    class="fa-regular fa-envelope bg-[#f26333] p-[5px] rounded-full"
+                  ></i>
+                </div>
+                <div class="text-sm">partnerships@gonukkad.com</div>
+              </a>
+            </div>
+          </div>
+          <div class="hidden lg:flex gap-3 text-[13px] md:text-base">
+            <div>Follow Us:</div>
+            <div class="flex gap-1 items-center">
+              <a href="https://www.facebook.com/gonukkadcom">
+                <div class="flex items-center">
+                  <i
+                    class="fa-brands fa-facebook-f scale-75 bg-[#f26333] px-3 py-2 rounded-full"
+                  ></i>
+                </div>
+              </a>
+              <a href="https://twitter.com/Gonukkadcom">
+                <div class="flex items-center">
+                  <i
+                    class="fa-brands fa-twitter scale-75 bg-[#f26333] p-2 rounded-full"
+                  ></i>
+                </div>
+              </a>
+              <a href="https://www.instagram.com/gonukkadcom/">
+                <div class="flex items-center">
+                  <i
+                    class="fa-brands fa-instagram scale-75 bg-[#f26333] p-2 rounded-full"
+                  ></i>
+                </div>
+              </a>
+            </div>
+          </div>
+          
+        </div>
+      </section>
+      <section
+        class="px-2 py-2 flex flex-col lg:flex-row justify-between lg:items-center shadow-xl w-screen space-y-6 lg:space-y-0"
+      >
+        <div
+          class="h-fit overflow-hidden flex justify-between items-center w-full lg:w-fit"
+        >
+          <a href="https://www.gonukkad.com/">
+            <img
+              src="./assets/images/logo.webp"
+              alt="Gonukkad Logo"
+              class="w-fit h-12"
+            />
+          </a>
+          <div
+            class="lg:hidden relative bg-[#f26333] size-10 px-7 rounded"
+            onclick="MenuToggle()"
+          >
+            <img
+              id="menubars"
+              src="./assets/images/menu.svg"
+              alt="menu icon"
+              class="absolute top-[50%] left-[50%] -translate-x-[50%] -translate-y-[50%]"
+            />
+            <img
+              id="menucross"
+              src="./assets/images/x.svg"
+              alt="menu icon"
+              class="hidden absolute top-[50%] left-[50%] -translate-x-[50%] -translate-y-[50%]"
+            />
+          </div>
+        </div>
+        <nav class="hidden lg:block lg:pr-5"  id="menu">
+          <ul
+            class="flex gap-4  font-[sofiaproregular]  lg:items-center *:hover:cursor-pointer flex-col lg:flex-row"
+          >
+            <a href="/">
+              <li class="hover:text-[#f26333] pl-4 lg:pl-0">Home</li>
+            </a>
+            <a href="/verification">
+              <li class="hover:text-[#f26333] pl-4 lg:pl-0">
+                Business Verification
+              </li>
+            </a>
+            <li class="hover:text-[#f26333] pl-4 lg:pl-0">Website</li>
+            <li class="pl-4 lg:pl-0 relative">
+              <div
+                class="flex items-center gap-2 hover:text-[#f26333] group"
+                id="dropdownshowbutton"
+              >
+                <span> Ecommerce Growth Engine </span>
+
+                <span class="size-2">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 320 512"
+                    class="group-hover:fill-[#f26333]"
+                  >
+                    <path
+                      d="M137.4 374.6c12.5 12.5 32.8 12.5 45.3 0l128-128c9.2-9.2 11.9-22.9 6.9-34.9s-16.6-19.8-29.6-19.8L32 192c-12.9 0-24.6 7.8-29.6 19.8s-2.2 25.7 6.9 34.9l128 128z"
+                    />
+                  </svg>
+                </span>
+              </div>
+              <ul
+                class="hidden z-10 lg:absolute top-8 origin-[0] bg-white lg:border-2 w-[250px] rounded"
+                id="dropdown"
+              >
+                <a href="https://www.gonukkad.com/seller-support">
+                  <li
+                    class="hover:text-[#f26333] lg:hover:bg-[#f26333] lg:hover:text-white px-4 py-[3px]"
+                  >
+                    Ecommerce Seller Support
+                  </li>
+                </a>
+                <li class="py-[3px] relative">
+                  <div
+                    class="flex items-center gap-1 lg:hover:stroke-white group hover:text-[#f26333] lg:hover:bg-[#f26333] lg:hover:text-white px-4 peer"
+                  >
+                    <span>Full Account Mangement</span>
+                    <span class="block size-4">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="black"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        class="group-hover:stroke-[#f26333] lg:group-hover:stroke-white"
+                      >
+                        <polyline points="13 17 18 12 13 7"></polyline>
+                        <polyline points="6 17 11 12 6 7"></polyline>
+                      </svg>
+                    </span>
+                  </div>
+                  <ul
+                    class="z-10 space-y-1 lg:absolute left-[100%] top-0 bg-white pl-6 lg:pl-0 lg:border-2 w-max lg:w-[200px] rounded hidden hover:block peer-hover:block"
+                  >
+                    <a
+                      href="https://www.gonukkad.com/amazon-account-management-services"
+                    >
+                      <li
+                        class="hover:text-[#f26333] lg:hover:bg-[#f26333] lg:hover:text-white px-4 py-[3px]"
+                      >
+                        Amazon Account Management Services
+                      </li>
+                    </a>
+                    <a
+                      href="https://www.gonukkad.com/flipkart-account-management-services"
+                    >
+                      <li
+                        class="hover:text-[#f26333] lg:hover:bg-[#f26333] lg:hover:text-white px-4 py-[3px]"
+                      >
+                        Flipkart Account Management Services
+                      </li>
+                    </a>
+                    <a
+                      href="https://www.gonukkad.com/meesho-account-management-services"
+                    >
+                      <li
+                        class="hover:text-[#f26333] lg:hover:bg-[#f26333] lg:hover:text-white px-4 py-[3px]"
+                      >
+                        Meesho Account Management Services
+                      </li>
+                    </a>
+                    <a
+                      href="https://www.gonukkad.com/jiomart-account-management-services"
+                    >
+                      <li
+                        class="hover:text-[#f26333] lg:hover:bg-[#f26333] lg:hover:text-white px-4 py-[3px]"
+                      >
+                        Jiomart Account Management Services
+                      </li>
+                    </a>
+                    <a
+                      href="https://www.gonukkad.com/ebay-account-management-services"
+                    >
+                      <li
+                        class="hover:text-[#f26333] lg:hover:bg-[#f26333] lg:hover:text-white px-4 py-[3px]"
+                      >
+                        Ebay Account Management Services
+                      </li>
+                    </a>
+                    <a
+                      href="https://www.gonukkad.com/etsy-account-management-services"
+                    >
+                      <li
+                        class="hover:text-[#f26333] lg:hover:bg-[#f26333] lg:hover:text-white px-4 py-[3px]"
+                      >
+                        Etsy Account Management Services
+                      </li>
+                    </a>
+                  </ul>
+                </li>
+
+                <li class="py-[3px] relative">
+                  <div
+                    class="flex items-center gap-1 hover:stroke-white group hover:text-[#f26333] lg:hover:bg-[#f26333] lg:hover:text-white px-4 peer"
+                  >
+                    <span>Listing & Cataloging</span>
+                    <span class="block size-4">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="black"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        class="group-hover:stroke-[#f26333] lg:group-hover:stroke-white"
+                      >
+                        <polyline points="13 17 18 12 13 7"></polyline>
+                        <polyline points="6 17 11 12 6 7"></polyline>
+                      </svg>
+                    </span>
+                  </div>
+                  <ul
+                    class="z-10 space-y-1 lg:absolute left-[100%] top-0 bg-white pl-6 lg:pl-0 lg:border-2 w-max rounded hidden hover:block peer-hover:block"
+                  >
+                    <a
+                      href="https://www.gonukkad.com/amazon-listing-cataloging-services"
+                    >
+                      <li
+                        class="hover:text-[#f26333] lg:hover:bg-[#f26333] lg:hover:text-white px-4 py-[3px]"
+                      >
+                        Amazon Listing &amp; Cataloging
+                      </li>
+                    </a>
+                    <a
+                      href="https://www.gonukkad.com/flipkart-listing-cataloging-services"
+                    >
+                      <li
+                        class="hover:text-[#f26333] lg:hover:bg-[#f26333] lg:hover:text-white px-4 py-[3px]"
+                      >
+                        Flipkart Listing &amp; Cataloging
+                      </li>
+                    </a>
+                    <a
+                      href="https://www.gonukkad.com/meesho-listing-cataloging-services"
+                      class="w-full h-full"
+                    >
+                      <li
+                        class="hover:text-[#f26333] lg:hover:bg-[#f26333] lg:hover:text-white px-4 py-[3px]"
+                      >
+                        Meesho Listing &amp; Cataloging
+                      </li>
+                    </a>
+
+                    <a
+                      href="https://www.gonukkad.com/jiomart-listing-cataloging-services"
+                      class="w-full h-full"
+                    >
+                      <li
+                        class="hover:text-[#f26333] lg:hover:bg-[#f26333] lg:hover:text-white px-4 py-[3px]"
+                      >
+                        Jiomart Listing &amp; Cataloging
+                      </li>
+                    </a>
+
+                    <a
+                      href="https://www.gonukkad.com/ebay-listing-cataloging-services"
+                      class="w-full h-full"
+                    >
+                      <li
+                        class="hover:text-[#f26333] lg:hover:bg-[#f26333] lg:hover:text-white px-4 py-[3px]"
+                      >
+                        Ebay Listing &amp; Cataloging
+                      </li>
+                    </a>
+
+                    <a
+                      href="https://www.gonukkad.com/etsy-listing-services"
+                      class="w-full h-full"
+                    >
+                      <li
+                        class="hover:text-[#f26333] lg:hover:bg-[#f26333] lg:hover:text-white px-4 py-[3px]"
+                      >
+                        Etsy Listing &amp; Cataloging
+                      </li>
+                    </a>
+                  </ul>
+                </li>
+                <a
+                  href="https://www.gonukkad.com/amazon-brand-store-services"
+                  class="w-full h-full"
+                >
+                  <li
+                    class="hover:text-[#f26333] lg:hover:bg-[#f26333] lg:hover:text-white px-4 py-[3px]"
+                  >
+                    Amazon - Brand Store
+                  </li>
+                </a>
+
+                <a
+                  href="https://www.gonukkad.com/amazon-a-plus-listing-services"
+                  class="w-full h-full"
+                >
+                  <li
+                    class="hover:text-[#f26333] lg:hover:bg-[#f26333] lg:hover:text-white px-4 py-[3px]"
+                  >
+                    Amazon - A+ Listing
+                  </li>
+                </a>
+
+                <li class="py-[3px] relative">
+                  <div
+                    class="flex items-center gap-1 hover:stroke-white group hover:text-[#f26333] lg:hover:bg-[#f26333] lg:hover:text-white px-4 peer"
+                  >
+                    <span>Advertising</span>
+                    <span class="block size-4">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="black"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        class="group-hover:stroke-[#f26333] lg:group-hover:stroke-white"
+                      >
+                        <polyline points="13 17 18 12 13 7"></polyline>
+                        <polyline points="6 17 11 12 6 7"></polyline>
+                      </svg>
+                    </span>
+                  </div>
+                  <ul
+                    class="z-10 space-y-1 lg:absolute left-[100%] top-0 bg-white pl-6 lg:pl-0 lg:border-2 w-max rounded hidden hover:block peer-hover:block"
+                  >
+                    <a
+                      href="https://www.gonukkad.com/amazon-advertising-services"
+                      class="w-full h-full"
+                    >
+                      <li
+                        class="hover:text-[#f26333] lg:hover:bg-[#f26333] lg:hover:text-white px-4 py-[3px]"
+                      >
+                        Amazon Advertising
+                      </li>
+                    </a>
+
+                    <a
+                      href="https://www.gonukkad.com/flipkart-advertising-services"
+                      class="w-full h-full"
+                    >
+                      <li
+                        class="hover:text-[#f26333] lg:hover:bg-[#f26333] lg:hover:text-white px-4 py-[3px]"
+                      >
+                        Flipkart Advertising
+                      </li>
+                    </a>
+
+                    <a
+                      href="https://www.gonukkad.com/meesho-advertising-services"
+                      class="w-full h-full"
+                    >
+                      <li
+                        class="hover:text-[#f26333] lg:hover:bg-[#f26333] lg:hover:text-white px-4 py-[3px]"
+                      >
+                        Meesho Advertising
+                      </li>
+                    </a>
+
+                    <a
+                      href="https://www.gonukkad.com/jiomart-advertising-services"
+                      class="w-full h-full"
+                    >
+                      <li
+                        class="hover:text-[#f26333] lg:hover:bg-[#f26333] lg:hover:text-white px-4 py-[3px]"
+                      >
+                        Jiomart Advertising
+                      </li>
+                    </a>
+
+                    <a
+                      href="https://www.gonukkad.com/ebay-advertising-services"
+                      class="w-full h-full"
+                    >
+                      <li
+                        class="hover:text-[#f26333] lg:hover:bg-[#f26333] lg:hover:text-white px-4 py-[3px]"
+                      >
+                        Ebay Advertising
+                      </li>
+                    </a>
+
+                    <a
+                      href="https://www.gonukkad.com/etsy-advertising-services"
+                      class="w-full h-full"
+                    >
+                      <li
+                        class="hover:text-[#f26333] lg:hover:bg-[#f26333] lg:hover:text-white px-4 py-[3px]"
+                      >
+                        Etsy Advertising
+                      </li>
+                    </a>
+                  </ul>
+                </li>
+
+                <li class="py-[3px] relative">
+                  <div
+                    class="flex items-center gap-1 hover:stroke-white group hover:text-[#f26333] lg:hover:bg-[#f26333] lg:hover:text-white px-4 peer"
+                  >
+                    <span>Calculators</span>
+                    <span class="block size-4">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="black"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        class="group-hover:stroke-[#f26333] lg:group-hover:stroke-white"
+                      >
+                        <polyline points="13 17 18 12 13 7"></polyline>
+                        <polyline points="6 17 11 12 6 7"></polyline>
+                      </svg>
+                    </span>
+                  </div>
+                  <ul
+                    class="z-10 space-y-1 lg:absolute left-[100%] top-0 bg-white pl-6 lg:pl-0 lg:border-2 w-max rounded hidden hover:block peer-hover:block"
+                  >
+                    <a
+                      href="https://www.gonukkad.com/amazon-fba-calculator"
+                      class="w-full h-full"
+                    >
+                      <li
+                        class="hover:text-[#f26333] lg:hover:bg-[#f26333] lg:hover:text-white px-4 py-[3px]"
+                      >
+                        Amazon FBA Calculator
+                      </li>
+                    </a>
+
+                    <a
+                      href="https://www.gonukkad.com/amazon-seller-calculator"
+                      class="w-full h-full"
+                    >
+                      <li
+                        class="hover:text-[#f26333] lg:hover:bg-[#f26333] lg:hover:text-white px-4 py-[3px]"
+                      >
+                        Amazon Seller Calculator
+                      </li>
+                    </a>
+
+                    <a
+                      href="https://www.gonukkad.com/gst-calculator"
+                      class="w-full h-full"
+                    >
+                      <li
+                        class="hover:text-[#f26333] lg:hover:bg-[#f26333] lg:hover:text-white px-4 py-[3px]"
+                      >
+                        GST Calculator
+                      </li>
+                    </a>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            <li class="pl-4 lg:pl-0 relative">
+              <div
+                class="flex items-center gap-2 hover:text-[#f26333] group"
+                id="dropdownshowbutton2"
+              >
+                <span> Who We Are </span>
+
+                <span class="size-2">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 320 512"
+                    class="group-hover:fill-[#f26333]"
+                  >
+                    <path
+                      d="M137.4 374.6c12.5 12.5 32.8 12.5 45.3 0l128-128c9.2-9.2 11.9-22.9 6.9-34.9s-16.6-19.8-29.6-19.8L32 192c-12.9 0-24.6 7.8-29.6 19.8s-2.2 25.7 6.9 34.9l128 128z"
+                    />
+                  </svg>
+                </span>
+              </div>
+              <ul
+                class="hidden z-10 lg:absolute top-8 origin-[0] bg-white lg:border-2 w-max rounded"
+                id="dropdown2"
+              >
+                <a
+                  href="https://www.gonukkad.com/why-gonukkad-who-we-are"
+                  class="w-full h-full"
+                >
+                  <li
+                    class="hover:text-[#f26333] lg:hover:bg-[#f26333] lg:hover:text-white px-4 py-[3px]"
+                  >
+                    Why Gonukkad
+                  </li>
+                </a>
+
+                <a
+                  href="https://www.gonukkad.com/our-story-who-we-are"
+                  class="w-full h-full"
+                >
+                  <li
+                    class="hover:text-[#f26333] lg:hover:bg-[#f26333] lg:hover:text-white px-4 py-[3px]"
+                  >
+                    Our Story
+                  </li>
+                </a>
+              </ul>
+            </li>
+            <a href="https://www.gonukkad.com/blog">
+              <li class="hover:text-[#f26333] pl-4 lg:pl-0">Blogs</li>
+            </a>
+
+            <a href="https://www.gonukkad.com/contact-us">
+              <li class="bg-[#f26333] px-4 text-white py-2 rounded w-fit">
+                Contact
+              </li>
+            </a>
+          </ul>
+        </nav>
+      </section>
+    </header>
+
+    <main>
+      <div
+        class="min-[971px]:px-24 min-[570px]:px-14 px-4 pt-44 pb-10  bg-cover border-none bg-[url('/assets/images/header-bg.webp')] min-[971px]:flex-row  flex-col flex items-center justify-center gap-12"
+      >
+        <div class="min-[971px]:w-3/5 w-full space-y-6">
+          <h1 class="lg:text-5xl text-2xl font-[sofiaprosemibold]">
+            <span class="text-[#eb3e23]">Amazon</span> Account Management Services
+          </h1>
+
+          <p class="lg:text-lg font-[sofiaproregular] text-justify">
+            Maintaining a healthy Amazon seller account with the help of an
+            Amazon service provider is crucial for the success of your online
+            business. Effective Amazon account management, delivered by an
+            experienced Amazon account management agency, includes managing your
+            amazon online account, complying with Amazon's policies, and
+            optimising product listings. Staying up-to-date with policies, and
+            creating accurate product descriptions and images can increase
+            visibility and trust with customers, resulting in positive feedback
+            and sales. Take your online business to new heights with effective
+            Amazon account management services.
+          </p>
+
+          <div class="mt-8 flex lg:justify-start justify-center">
+            <button
+              class="bg-[#f26333] font-[sofiaproregular] rounded-3xl text-[white] py-1.5 px-6 hover:bg-red-400"
+            >
+              <a href="tel:040-681-52890">CALL US</a>
+            </button>
+            <button
+              class="bg-[#157347] ml-4 font-[sofiaproregular] rounded-3xl text-[white] py-1.5 px-6 hover:bg-[#2f7d52]"
+            >
+              <a
+                href="https://api.whatsapp.com/send/?phone=9289112850&text&app_absent=0"
+                >WHATSAPP</a
+              >
+            </button>
+          </div>
+        </div>
+        <div
+          class="lg:w-1/3 border p-4 shadow-2xl h-auto text-center font-[sofiaproregular] bg-white rounded-2xl"
+        >
+          <p class="text-center font-bold text-2xl font-[sofiaprosemibold]">
+            Enquire Now
+          </p>
+          <p class="text-gray-600">Enter your Detail</p>
+
+          <div class="mt-4 space-y-8">
+            <input
+              type="text"
+              class="w-full rounded-lg border hover:shadow-md h-8 font-[1rem] text-black placeholder-gray-600 p-4"
+              placeholder="Full Name *"
+              required
+            />
+            <input
+              type="text"
+              class="w-full rounded-lg  border mt-3 hover:shadow-md h-8 font-[1rem] text-black placeholder-gray-600 p-4"
+              placeholder="Phone number *"
+              required
+            />
+            <input
+              type="text"
+              class="w-full rounded-lg  border mt-3 hover:shadow-md h-8 text-black placeholder-gray-600 p-4"
+              placeholder="Email ID *"
+              required
+            />
+            <input
+              type="text"
+              class="w-full rounded-lg  border mt-3 hover:shadow-md h-8 text-black placeholder-gray-600 p-4"
+              placeholder="Enter your query *"
+              required
+            />
+
+            <button
+              class="bg-[#f26333] rounded-3xl font-[sofiaproregular] text-[white] py-2.5 px-6 mt-3 hover:bg-red-400"
+            >
+              Submit
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="container mx-auto lg:px-8 px-3">
+        <div class="lg:px-52 mt-10">
+          <div class="flex flex-col justify-center items-center text-justify">
+            <h3
+              class="text-2xl font-[sofiaprosemibold] lg:text-3xl text-center"
+            >
+              Unlock the path to Online Platform Success with Our Expert Seller
+              Services
+            </h3>
+            <hr class="w-14 h-1 mt-4 border-none bg-red-500" />
+            <img
+              class="border rounded-md lg:mt-5 mt-10 border-red-500"
+              src="./assets/images/company.jpg"
+              alt="image"
+            />
+            <p class="p-4 font-[sofiaproregular]">
+              Unleash the power of your online business with the unrivaled
+              expertise of our seasoned Account Maestro! Brace yourself for a
+              transformative experience as our virtuoso guide leads you through
+              the intricate maze of product listings, deftly navigating the
+              treacherous landscape of online marketplaces' policies. With an
+              unwavering dedication to your success, our seasoned team stands
+              ready, armed with an arsenal of solutions meticulously crafted to
+              address your unique business needs. Don't miss this chance to
+              propel your online enterprise to dazzling new heights! Reach out
+              to us today and embark on an exhilarating journey towards
+              unprecedented triumph!
+            </p>
+          </div>
+          <div class="container lg:px-16">
+            <div class="grid grid-cols-1 lg:grid-cols-2 py-10 lg:px-16 gap-4">
+              <div class="flex flex-col justify-center items-center">
+                <h2 class="text-lg font-[sofiaprosemibold]">
+                  Strategies by Experts
+                </h2>
+                <hr class="w-12 h-1 mt-2 border-none bg-red-500" />
+                <img
+                  class="border rounded-md border-red-500 mt-10"
+                  src="./assets/images/Experts.jpg"
+                  alt="experts"
+                />
+                <p class="text-justify p-2 font-[sofiaproregular]">
+                  Unleash the power of proven strategies crafted by industry
+                  e-commerce experts to propel your business towards unrivaled
+                  success.
+                </p>
+              </div>
+              <div class="flex flex-col justify-center items-center">
+                <h2 class="text-lg font-[sofiaprosemibold]">
+                  Reduced fixed costs
+                </h2>
+                <hr class="w-12 h-1 mt-2 border-none bg-red-500" />
+                <img
+                  class="border rounded-md border-red-500 mt-10"
+                  src="./assets/images/Reduce_fixed_Costs.jpg"
+                  alt="experts"
+                />
+                <p class="text-justify p-2 font-[sofiaproregular]">
+                  Slash your fixed costs and boost your profitability with our
+                  innovative solutions designed to optimize your expenses and
+                  drive maximum efficiency.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div style="background-color: rgb(255, 239, 230)">
+        <div class="container mx-auto p-4 lg:p-20">
+          <div
+            class="flex flex-col justify-center items-center p-4 lg:p-0 lg:space-y-4"
+          >
+            <h3
+              class="text-2xl lg:text-3xl font-[sofiaprosemibold] text-center"
+            >
+              Why should you choose Gonukkad?
+            </h3>
+            <hr class="w-12 h-1 mt-2 border-none bg-red-500" />
+          </div>
+          <div
+            class="grid  grid-col-1 lg:grid-cols-3 bg-white rounded-lg p-5 lg:p-10 mt-6 space-y-8 lg:space-y-0"
+          >
+            <div class="flex flex-col space-y-4 lg:px-3">
+              <div class="flex flex-row gap-2 lg:gap-3">
+                <img src="./assets/icons/scale.png" alt="images" />
+                <h2
+                  class="lg:text-lg text-[#212529] font-medium font-[sofiaprosemibold]"
+                >
+                  Scale your Amazon Business
+                </h2>
+              </div>
+              <p class="font-[sofiaproregular]">
+                With Gonukkad’s unparalleled Amazon account management services,
+                scaling your business on Amazon is possible. Our expert Amazon
+                account managers specialise in providing comprehensive Amazon
+                seller services and support to help grow your business on
+                Amazon. We'll work closely with you to create a personalised
+                strategy that optimises your product listings and boosts sales,
+                ensuring long-term success. As expert amazon service providers
+                we will help take your Amazon business to the next level.
+              </p>
+            </div>
+            <div
+              class="flex flex-col space-y-4 lg:border-l-2 lg:border-r-2 lg:px-3"
+            >
+              <div class="flex flex-row gap-2 lg:gap-3">
+                <img src="./assets/icons/potential.png" alt="images" />
+                <h2
+                  class="lg:text-lg text-[#212529] font-medium font-[sofiaprosemibold]"
+                >
+                  Maximize potential revenue
+                </h2>
+              </div>
+              <p class="font-[sofiaproregular]">
+                Looking to enhance your Amazon sales? Gonukkad can help. Our
+                expert team can assist you in optimising your listings,
+                improving your conversion rates, and increasing your overall
+                sales volume. We are an expert Amazon account management agency
+                offering comprehensive strategies and management services
+                tailored to your specific needs, helping you overcome the
+                challenges of selling on Amazon.
+              </p>
+            </div>
+            <div class="flex flex-col space-y-4 lg:px-3">
+              <div class="flex flex-row gap-2 lg:gap-3">
+                <img src="./assets/icons/comprehensive.png" alt="images" />
+                <h2 class="lg:text-lg text-[#212529] font-[sofiaprosemibold]">
+                  Comprehensive support
+                </h2>
+              </div>
+              <p class="font-[sofiaproregular]">
+                Our expert Amazon seller account manager will provide expert
+                guidance and solutions for your Amazon business needs. From
+                product listings to account management and navigating Amazon's
+                policies, our experienced team is here to help. Contact our
+                Amazon service provider team today to take your Amazon business
+                to new heights.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="container mx-auto lg:p-16">
+        <div class="grid grid-col-1 lg:grid-cols-2 p-4 lg:px-16 gap-8">
+          <div class="flex flex-col justify-center items-center">
+            <img
+              class=""
+              src="./assets/images/Premium-account-management.jpg"
+              alt="Premium-account-management"
+            />
+          </div>
+          <div class="flex flex-col gap-5">
+            <h1 class="text-xl lg:text-3xl font-[sofiaprosemibold]">
+              Premium account management strategies that
+              <span
+                class="relative after:content-[' '] after:absolute after:left-0 after:top-[100%] after:border-b-[3px] after:w-12 lg:after:w-16 after:border-[#f26333]"
+                >work</span
+              >
+            </h1>
+
+            <p class="font-[sofiaproregular]">
+              Amazon is a virtual goldmine for entrepreneurs seeking to start or
+              expand their business ventures. With a vast customer base at your
+              fingertips, the profit potential is limitless. However, navigating
+              the marketplace's stringent guidelines and standards without
+              amazon seller services can be daunting, and strategic amazon
+              account management is essential to success.
+            </p>
+            <p class="font-[sofiaproregular]">
+              If you're looking for someone to deliver top-notch Amazon account
+              management services in order to manage your Amazon account or
+              amazon prime account, look no further than Gonukkad. Our
+              professional and best Amazon account management services cover
+              everything you need to ensure your account is running smoothly,
+              from optimizing your listings and boosting your organic rankings
+              to strategically planning and executing product launches. Our
+              Amazon account management team will closely work to customize our
+              approach to suit your specific needs, ensuring that you're getting
+              the most out of your Amazon account. With Gonukkad’s Amazon
+              account management agency managing your Amazon account, you can
+              rest easy knowing that your business is in good hands.
+            </p>
+            <p class="font-[sofiaproregular]">
+              Gonukkad is a top-tier Amazon account management agency, providing
+              comprehensive and professional Amazon seller account management
+              services that cover everything from account setup to
+              shipment-related needs.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <section class="bg-[#d2d6fa;] px-5 py-14 lg:px-28 lg:py-14">
+        <div class="flex flex-col justify-center items-center space-y-4">
+          <h1 class="text-2xl lg:text-3xl font-[sofiaprosemibold] text-center">
+            Our full Amazon Seller Account Management service covers
+          </h1>
+          <hr class="w-16 h-1 mx-auto border-none bg-red-600" />
+        </div>
+        <div class="px-5 py-5 lg:py-20 rounded-2xl mt-10 bg-white">
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
+            <div class="grid grid-cols gap-4">
+              <div class="flex flex-row items-center gap-4">
+                <img
+                  src="./assets/icons/central-account.webp"
+                  alt="Setting Up a Seller Central Account"
+                />
+                <p class="text-lg text-[#212529] font-[sofiaprosemibold]">
+                  Setting Up a Seller Central Account
+                </p>
+              </div>
+              <p class="font-[sofiaproregular]">
+                Setting up your Seller Central Account will be a breeze with us
+                as your Amazon seller services provider. Our team that delivers
+                your Amazon seller account management services will guide you
+                through the intricacies of registering your account, and any
+                issues concerning your seller account will be resolved promptly.
+              </p>
+            </div>
+            <div class="grid grid-cols gap-4">
+              <div class="flex flex-row items-center gap-4">
+                <img
+                  src="./assets/icons/listing-optimization.webp"
+                  alt="Listing Optimization"
+                />
+                <p class="text-lg text-[#212529] font-[sofiaprosemibold]">
+                  Listing Optimization
+                </p>
+              </div>
+              <p class="font-[sofiaproregular]">
+                By optimising your product pages, we can enhance your keyword
+                rankings. Leveraging our SEO expertise, we can effectively
+                utilise these rankings to increase and sustain your pages'
+                conversion rates. Avail of the benefits of an experienced amazon
+                service provider like us to fuel immense growth for your online
+                business.
+              </p>
+            </div>
+            <div class="grid grid-cols gap-4">
+              <div class="flex flex-row items-center gap-4">
+                <img
+                  src="./assets/icons/seo.webp"
+                  alt="Search Engine Optimization"
+                />
+                <p class="text-lg text-[#212529] font-[sofiaprosemibold]">
+                  Search Engine Optimization (SEO)
+                </p>
+              </div>
+              <p class="font-[sofiaproregular]">
+                Boosting your organic rankings and improving your brand's
+                visibility on Amazon is made easy with our SEO expertise. Our
+                Amazon account management agency only uses the most profitable
+                keywords, including long-tail, high-volume keywords unknown to
+                your competitors. With an amazon service provider like us, you
+                can rest assured that your e-commerce platform is optimized to
+                its best potential.
+              </p>
+            </div>
+            <div class="grid grid-cols gap-4">
+              <div class="flex flex-row items-center gap-4">
+                <img
+                  src="./assets/icons/brand-content.webp"
+                  alt="Enhanced Brand Content"
+                />
+                <p class="text-lg text-[#212529] font-[sofiaprosemibold]">
+                  Enhanced Brand Content
+                </p>
+              </div>
+              <p class="font-[sofiaproregular]">
+                We, as an amazon service provider, specialize in optimizing your
+                product pages, maximizing keyword rankings, and efficiently
+                utilizing them to increase and maintain your pages' conversion
+                rates. Our Enhanced Brand Content service highlights your
+                product's benefits, providing keyword-indexed compelling copies
+                presented in a strategic layout with captivating images that
+                perfectly complement the targeted descriptions.
+              </p>
+            </div>
+            <div class="grid grid-cols gap-4">
+              <div class="flex flex-row items-center gap-4">
+                <img
+                  src="./assets/icons/product-listing.webp"
+                  alt="Product Listing Management"
+                />
+                <p class="text-lg font-[sofiaprosemibold]">
+                  Product Listing Management
+                </p>
+              </div>
+              <p class="font-[sofiaproregular]">
+                From placing your products in the appropriate category to adding
+                specific details like SKU, content, search terms, and
+                attributes, we are an Amazon account management agency that
+                takes care of all aspects of product listing management. We also
+                manage bulk and parent-child listings, ensuring that you win the
+                buy box through Seller Central.
+              </p>
+            </div>
+            <div class="grid grid-cols gap-4">
+              <div class="flex flex-row items-center gap-4">
+                <img
+                  src="./assets/icons/brand-reg.webp"
+                  alt="Brand Registry & Protection"
+                />
+                <p class="text-lg font-[sofiaprosemibold]">
+                  Brand Registry & Protection
+                </p>
+              </div>
+              <p class="font-[sofiaproregular]">
+                Brand Registry and Protection is a tedious and time-consuming
+                process, especially without the help of professional Amazon
+                seller services. Partner with our account management team, and
+                we'll manage each process diligently, taking care of submitting
+                your documents and safeguarding your brand from malicious
+                entities such as counterfeiters and unauthorised sellers.
+              </p>
+            </div>
+            <div class="grid grid-cols gap-4">
+              <div class="flex flex-row items-center gap-4">
+                <img
+                  src="./assets/icons/product-launch.webp"
+                  alt="Product Launch"
+                />
+                <p class="text-lg font-[sofiaprosemibold]">Product Launch</p>
+              </div>
+              <p class="font-[sofiaproregular]">
+                When it comes to product launches, our Amazon seller account
+                management services have you covered. Our expert team offers
+                efficient Amazon seller services and strategically plan and
+                execute a launch that elicits favorable customer feedback.
+                Employing effective marketing techniques and brand-protective
+                measures, we ensure that your content remains secure from
+                hijackers and counterfeiters on the Amazon Marketplace.
+              </p>
+            </div>
+            <div class="grid grid-cols gap-4">
+              <div class="flex flex-row items-center gap-4">
+                <img src="./assets/icons/prep.webp" alt="Prep & Logistics" />
+                <p class="text-lg font-[sofiaprosemibold]">Prep & Logistics</p>
+              </div>
+              <p class="font-[sofiaproregular]">
+                We're here if you are still looking for the best Amazon service
+                provider near you, Count on us to handle all your
+                shipment-related needs as your trusted third-party prep service
+                provider. With our extensive experience and in-depth knowledge
+                of the rules and guidelines governing shipments and Amazon
+                accounts, we guarantee smooth logistics.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div
+          class="mt-14 flex flex-row justify-center items-center gap-3"
+        >
+          <button
+            class="bg-[#f26333] font-[sofiaproregular] rounded-3xl text-[white] py-1.5 px-6 hover:bg-red-400"
+          >
+            <a href="tel:040-681-52890">CALL US</a>
+          </button>
+          <button
+            class="bg-[#157347] ml-2 font-[sofiaproregular] rounded-3xl text-[white] py-1.5 px-6 hover:bg-[#2f7d52]"
+          >
+            <a
+              href="https://api.whatsapp.com/send/?phone=9289112850&text&app_absent=0"
+              >WHATSAPP</a
+            >
+          </button>
+        </div>
+      </section>
+      <div class="w-full min-[971px]:px-24 min-[570px]:px-14 px-2 py-14 font-[sofiaproregular] bg-white overflow-hidden space-y-2 relative ">
+
+        <h3 class="text-[red] pl-12 lg:pl-0  font-[sofiaproregular]">Platform</h3>
+        <p class="sm:text-3xl pl-12 lg:pl-0 text-2xl  font-[sofiaprosemibold]">
+            We Help You Sell on
+        </p>
+
+        
+
+        <div id="slider_2" class="slider  select-none ">
+            <div
+                class="overflow-hidden relative mx-auto   w-[calc(var(--slidewidth2))] sm:w-[calc(var(--slidewidth2)*2)] md:w-[calc(var(--slidewidth2)*3)] lg:w-[calc(var(--slidewidth2)*4)] xl:w-[calc(var(--slidewidth2)*5)] h-[300px]">
+                <div id="slides_2"
+                    class="slides flex  relative top-0  left-[calc(var(--slidewidth2)*-5)] w-[10000px] overflow-hidden ">
+                    <span
+                        class="slide p-0 w-[calc(var(--slidewidth2))] h-[300px] flex flex-col justify-center box-border transition-all duration-1000 relative ">
+                        <div class="border rounded-2xl w-56  item-center flex justify-center p-2 slider_2_p">
+                            <div class="text-center">
+
+
+                                <img src="./assets/images2/Amazon_Logo.webp" alt="" srcset="">
+                                <p class="underline hover:text-red-500 hover:cursor-pointer text-[13px]"><a
+                                        href="https://www.gonukkad.com/amazon-advertising-services">Amazon
+                                        Advertising</a></p>
+
+                                <p class="underline hover:text-red-500 hover:cursor-pointer  text-[13px]"><a
+                                        href="https://www.gonukkad.com/amazon-listing-cataloging-services">Amazon
+                                        listing
+                                        & Cataloging</a></p>
+
+                            </div>
+
+                        </div>
+
+                    </span>
+                    <span
+                        class="slide p-0 w-[calc(var(--slidewidth2))] h-[300px] flex flex-col justify-center box-border transition-all duration-1000 relative ">
+                        <div class="border rounded-2xl w-56  item-center flex justify-center p-2 slider_2_p">
+                            <div class="text-center">
+
+
+                                <img src="./assets/images2/Flipkart_Logo.webp" alt="" srcset="">
+                                <p class="underline hover:text-red-500 hover:cursor-pointer text-[13px]"><a
+                                        href="https://www.gonukkad.com/flipkart-advertising-services">Flipkart
+                                        Advertising</a></p>
+
+                                <p class="underline hover:text-red-500 hover:cursor-pointer  text-[13px]"><a
+                                        href="https://www.gonukkad.com/flipkart-listing-cataloging-services">Flipkart
+                                        Listing & Cataloging</a></p>
+
+                            </div>
+
+                        </div>
+                    </span>
+                    <span
+                        class="slide p-0 w-[calc(var(--slidewidth2))] h-[300px] flex flex-col justify-center box-border transition-all duration-1000 relative">
+                        <div class="border rounded-2xl w-56  item-center flex justify-center p-2 slider_2_p">
+                            <div class="text-center">
+
+
+                                <img src="./assets/images2/Meesho_Logo.webp" alt="" srcset="">
+                                <p class="underline hover:text-red-500 hover:cursor-pointer text-[13px]"><a
+                                        href="https://www.gonukkad.com/meesho-advertising-services">Meesho
+                                        Advertising</a></p>
+
+                                <p class="underline hover:text-red-500 hover:cursor-pointer  text-[13px]"><a
+                                        href="https://www.gonukkad.com/meesho-listing-cataloging-services">Meesho
+                                        Listing
+                                        & Cataloging</a></p>
+
+                            </div>
+
+                        </div>
+
+                    </span>
+                    <span
+                        class="slide  p-0 w-[calc(var(--slidewidth2))] h-[300px] flex flex-col justify-center box-border transition-all duration-1000 relative ">
+                        <div class="border rounded-2xl w-56  item-center flex justify-center p-2 slider_2_p">
+                            <div class="text-center">
+
+
+                                <img src="./assets/images2/Jiomart_Logo.webp" alt="" srcset="">
+                                <p class="underline hover:text-red-500 hover:cursor-pointer text-[13px]"><a
+                                        href="https://www.gonukkad.com/jiomart-advertising-services">Jiomart
+                                        Advertising</a></p>
+
+                                <p class="underline hover:text-red-500 hover:cursor-pointer  text-[13px]"><a
+                                        href="https://www.gonukkad.com/jiomart-listing-cataloging-services">Jiomart
+                                        Listing & Cataloging</a></p>
+
+                            </div>
+
+                        </div>
+
+                    </span>
+                    <span
+                        class="slide p-0 w-[calc(var(--slidewidth2))] h-[300px] flex flex-col justify-center box-border transition-all duration-1000 relative ">
+                        <div class="border rounded-2xl w-56  item-center flex justify-center p-2 slider_2_p">
+                            <div class="text-center">
+
+
+                                <img src="./assets/images2/Ebay_Logo.webp" alt="" srcset="">
+                                <p class="underline hover:text-red-500 hover:cursor-pointer text-[13px]"><a
+                                        href="https://www.gonukkad.com/ebay-advertising-services">Ebay
+                                        Advertising</a></p>
+
+                                <p class="underline hover:text-red-500 hover:cursor-pointer  text-[13px]"><a
+                                        href="https://www.gonukkad.com/ebay-listing-cataloging-services">Ebay Listing &
+                                        Cataloging</a></p>
+
+                            </div>
+
+                        </div>
+
+                    </span>
+                    <span
+                        class="slide p-0 w-[calc(var(--slidewidth2))] h-[300px] flex flex-col justify-center box-border transition-all duration-1000 relative ">
+                        <div class="border rounded-2xl w-56  item-center flex justify-center p-2 slider_2_p">
+                            <div class="text-center">
+
+
+                                <img src="./assets/images2/Esty_Logo.webp" alt="" srcset="">
+                                <p class="underline hover:text-red-500 hover:cursor-pointer text-[13px]"><a
+                                        href="https://www.gonukkad.com/how-to-sell-on-etsy">How to sell on
+                                        Etsy</a></p>
+
+                                <p class="underline hover:text-red-500 hover:cursor-pointer  text-[13px]"><a
+                                        href="#">Etsy Listing &
+                                        Cataloging</a></p>
+
+                            </div>
+
+                        </div>
+
+                    </span>
+                    <span
+                        class="slide p-0 w-[calc(var(--slidewidth2))] h-[300px] flex flex-col justify-center box-border transition-all duration-1000 relative ">
+                        <div class="border rounded-2xl w-56 item-center flex justify-center p-2 slider_2_p">
+                            <div class="text-center">
+
+
+                                <img src="./assets/images2/Myntra_Logo1.webp" alt="" srcset="">
+                                <p class="underline hover:text-red-500 hover:cursor-pointer text-[13px]"><a
+                                        href="https://www.gonukkad.com/how-to-sell-on-myntra-in-india"> How to sell on
+                                        Myntra</a></p>
+
+                                <p class="underline hover:text-red-500 hover:cursor-pointer  text-[13px]"><a
+                                        href="#">Myntra Listing
+                                        &
+                                        Cataloging</a></p>
+
+                            </div>
+
+                        </div>
+
+                    </span>
+                    <span
+                        class="slide p-0 w-[calc(var(--slidewidth2))] h-[300px] flex flex-col justify-center box-border transition-all duration-1000 relative ">
+                        <div class="border rounded-2xl w-56  item-center flex justify-center p-2 slider_2_p">
+                            <div class="text-center">
+
+
+                                <img src="./assets/images2/Nykaa_Logo.webp" alt="" srcset="">
+                                <p class="underline hover:text-red-500 hover:cursor-pointer text-[13px]"><a
+                                        href="https://www.gonukkad.com/how-to-sell-on-nykaa"> How to sell on
+                                        Nykaa</a></p>
+
+                                <p class="underline hover:text-red-500 hover:cursor-pointer  text-[13px]"><a
+                                        href="#">Nykaa Listing
+                                        & Cataloging</a></p>
+
+                            </div>
+
+                        </div>
+
+                    </span>
+
+                </div>
+            </div>
+            <div class="flex justify-between">
+
+                <button id="prev_2"><img src="./assets/images2/prev.png" alt="" srcset=""></button>
+                <button id="next_2"><img src="./assets/images2/next.png"></button>
+
+            </div>
+
+
+            <hr class="w-full mx-auto bg-gray-400 mt-12  h-[2px]" />
+        </div>
+
+
+    </div>
+    
+
+      <div
+        class="min-[971px]:px-24 min-[570px]:px-14 px-2 py-14 bg-[#ffefe6] space-y-4"
+        id="target"
+      >
+        <p class="text-3xl font-[sofiaprosemibold] text-center">
+          Let's Talk Numbers
+        </p>
+        <p class="text-center font-[sofiaproregular]">
+          Experience and Mindset in Building Success
+        </p>
+        <hr class="w-16 mt-3 mx-auto border-none bg-red-500 text-red-500 h-1" />
+        <p class="text-center font-[sofiaproregular]">
+          To derive the expected results, it is vital to have a clear path and
+          stay focused that will assist you in achieving your goals. Our vision
+          is to leverage the full potential of the Internet to deliver
+          measurable outcomes to our clients.
+        </p>
+
+        <div
+          class="grid lg:grid-cols-4 min-[485px]:grid-cols-2 grid-cols-1 gap-4 font-[sofiaproregular]"
+        >
+          <div
+            class="border border-red-500 flex items-center justify-center py-8 space-x-2 bg-white rounded-2xl"
+          >
+            <div>
+              <img src="./assets/images2/order.svg" alt="" class="h-12 w-12" />
+            </div>
+
+            <div class="text-black">
+              <p class="text-3xl font-bold">
+                <span class="num" data_val="8">1</span> K +
+              </p>
+              <h4>Client</h4>
+            </div>
+          </div>
+          <div
+            class="border border-red-500 flex items-center justify-center py-8 space-x-2 pl-10 bg-white rounded-2xl"
+          >
+            <div>
+              <img
+                src="./assets/images2/experience.svg"
+                alt="Years Experience"
+                class="h-12 w-12"
+              />
+            </div>
+            <div class="text-black">
+              <p class="text-3xl font-bold">
+                <span class="num" data_val="8">1</span> +
+              </p>
+              <h4>Years Experience</h4>
+            </div>
+          </div>
+          <div
+            class="border border-red-500 flex items-center justify-center py-8 space-x-2 bg-white rounded-2xl"
+          >
+            <div>
+              <img
+                src="./assets/images2/client.svg"
+                alt="Daily Order"
+                class="h-12 w-12"
+              />
+            </div>
+
+            <div class="text-black">
+              <p class="text-3xl font-bold">
+                <span class="num" data_val="8">1</span> L +
+              </p>
+              <h4>Daily Order</h4>
+            </div>
+          </div>
+          <div
+            class="border border-red-500 flex items-center justify-center py-8 space-x-2 bg-white rounded-2xl"
+          >
+            <div>
+              <img
+                src="./assets/images2/revenue.svg"
+                alt=""
+                class="h-12 w-12"
+              />
+            </div>
+
+            <div class="text-black">
+              <p class="text-3xl font-bold">
+                <span class="num" data_val="9">1</span> Cr +
+              </p>
+              <h4>Revenue</h4>
+            </div>
+          </div>
+        </div>
+
+        <div class="space-y-10 text-center font-[sofiaproregular]">
+          <button
+            class="bg-[#EB3E23] rounded-3xl text-[white] py-1.5 px-6 hover:opacity-80"
+          >
+            <a href="tel:+91-80-692-28600">CALL US</a>
+          </button>
+          <button
+            class="bg-[#157347] ml-4 rounded-3xl text-[white] py-1.5 px-6 hover:opacity-80"
+          >
+            <a
+              href="https://api.whatsapp.com/send/?phone=9289112850&text&app_absent=0"
+              target="_blank"
+              >WHATSAPP</a
+            >
+          </button>
+        </div>
+      </div>
+
+      <div class="w-full min-[971px]:px-24  font-[sofiaproregular]  min-[570px]:px-14 px-2 py-14 bg-[#D2D6FA] overflow-hidden space-y-6 relative ">
+        <img src="./photo/cicrle-bg1.png" alt="" srcset="" class="absolute -right-36 -top-48 lg:opacity-70 opacity-30">
+        <img src="./photo/cicrle-bg1.png" alt="" srcset=""
+            class="absolute -left-36  -bottom-48 lg:opacity-100 opacity-30  ">
+        <p class="sm:text-3xl  text-xl font-[sofiaprosemibold] text-center z-10">
+            Businesses Who Can Associate With Us
+        </p>
+
+        <hr class="w-20 mx-auto bg-[#EB3E23] border-none h-1" />
+
+        <div id="slider" class="slider select-none ">
+            <div
+                class="overflow-hidden  relative mx-auto  w-[calc(var(--slidewidth))] md:w-[calc(var(--slidewidth)*2)] lg:w-[calc(var(--slidewidth)*3)] xl:w-[calc(var(--slidewidth)*4)] h-[300px] ">
+                <div id="slides"
+                    class="slides flex relative top-0 left-[calc(var(--slidewidth)*-4)] w-[10000px] overflow-hidden">
+                    <span
+                        class="slide lg:p-5 md:p-1 p:0 w-[calc(var(--slidewidth))] h-[250px] flex flex-col justify-center box-border transition-all duration-1000 relative ">
+                        <div class="border rounded-2xl w-full item-center flex justify-center bg-white p-8 h-[250px]">
+                            <div class="text-center space-y-8">
+
+                                <div
+                                    class="text-center border border-gray-200 p-4 rounded-[70px] w-28 h-28 mx-auto  flex flex-col items-center space-y-2">
+                                    <img src="./assets/images2/distributor.png" alt="Distributors"
+                                        srcset="" class="w-20 h-20">
+
+
+                                </div>
+                                <h3 class="text-black">Distributors</h3>
+                            </div>
+
+                        </div>
+
+                    </span>
+                    <span
+                        class="slide lg:p-5 md:p-1 p:0 w-[calc(var(--slidewidth))] h-[250px] flex flex-col justify-center box-border transition-all duration-1000 relative ">
+                        <div class="border rounded-2xl w-full item-center flex justify-center bg-white p-8 h-[250px]">
+                            <div class="text-center space-y-8">
+
+                                <div
+                                    class="text-center border border-gray-200 p-4 rounded-[70px] w-28 h-28 mx-auto  flex flex-col items-center space-y-2">
+                                    <img src="./assets/images2/retailer.png" alt="Retailer"
+                                        srcset="" class="w-20 h-20">
+
+
+                                </div>
+                                <h3 class="text-black">Retailer</h3>
+                            </div>
+
+                        </div>
+
+                    </span>
+                    <span
+                        class="slide lg:p-5 md:p-1 p:0 w-[calc(var(--slidewidth))] h-[250px] flex flex-col justify-center box-border transition-all duration-1000 relative">
+                        <div class="border rounded-2xl w-full item-center flex justify-center bg-white p-8 h-[250px]">
+                            <div class="text-center space-y-8">
+
+                                <div
+                                    class="text-center border border-gray-200 p-4 rounded-[70px] w-28 h-28 mx-auto  flex flex-col items-center space-y-2">
+                                    <img src="./assets/images2/msme.png" alt="MSMEs" srcset=""
+                                        class=" w-20 h-20">
+
+
+                                </div>
+                                <h3 class="text-black">MSMEs</h3>
+                            </div>
+
+                        </div>
+
+                    </span>
+                    <span
+                        class="slide lg:p-5 md:p-1 p:0 w-[calc(var(--slidewidth))] h-[250px] flex flex-col justify-center box-border transition-all duration-1000 relative ">
+                        <div class="border rounded-2xl w-full item-center flex justify-center bg-white p-8 h-[250px]">
+                            <div class="text-center space-y-8">
+
+                                <div
+                                    class="text-center border border-gray-200 p-4 rounded-[70px] w-28 h-28 mx-auto  flex flex-col items-center space-y-2">
+                                    <img src="./assets/images2/sme.png" alt="SMEs" srcset=""
+                                        class=" w-20 h-20">
+
+
+                                </div>
+                                <h3 class="text-black">SMEs</h3>
+                            </div>
+
+                        </div>
+
+                    </span>
+                    <span
+                        class="slide lg:p-5 md:p-1 p:0 w-[calc(var(--slidewidth))] h-[250px] flex flex-col justify-center box-border transition-all duration-1000 relative ">
+                        <div class="border rounded-2xl w-full item-center flex justify-center bg-white p-8 h-[250px]">
+                            <div class="text-center space-y-8">
+
+                                <div
+                                    class="text-center border border-gray-200 p-4 rounded-[70px] w-28 h-28 mx-auto  flex flex-col items-center space-y-2">
+                                    <img src="./assets/images2/farmer.png" alt="Farmers" srcset=""
+                                        class=" w-20 h-20">
+
+
+                                </div>
+                                <h3 class="text-black">Farmers</h3>
+                            </div>
+
+                        </div>
+
+                    </span>
+                    <span
+                        class="slide lg:p-5 md:p-1 p:0 w-[calc(var(--slidewidth))] h-[250px] flex flex-col justify-center box-border transition-all duration-1000 relative ">
+                        <div class="border rounded-2xl w-full item-center flex justify-center bg-white p-8 h-[250px] ">
+                            <div class="text-center space-y-8">
+
+                                <div
+                                    class=" rounded-2xl text-center border border-gray-200 p-4  w-28 h-28 mx-auto  flex flex-col items-center space-y-2">
+                                    <img src="./assets/images2/Fisheries.png" alt="Very Small Scale Fisheries"
+                                        srcset="" class="w-20 h-20">
+
+
+                                </div>
+                                <h3 class="text-black">Very Small Scale Fisheries</h3>
+                            </div>
+
+                        </div>
+
+                    </span>
+
+
+
+
+                </div>
+            </div>
+
+
+
+
+
+        </div>
+    </div>
+
+      <section class="lg:px-36 px-5 py-8 lg:py-16 space-y-12">
+        <div class="flex flex-col justify-center items-center space-y-4">
+          <h1 class="text-2xl lg:text-3xl font-[sofiaprosemibold] text-center">
+            Frequently Asked Questions
+          </h1>
+          <hr class="w-16 h-1 mx-auto border-none bg-red-600" />
+        </div>
+        <div class="w-full space-y-16">
+          <div class="flex flex-col md:flex-row w-full justify-between gap-16">
+            <div class="flex flex-col justify-center space-y-6 md:w-1/2">
+              <h2 class="text-xl font-[sofiaprosemibold]">
+                Why is Amazon Account Management services important for your
+                business?
+              </h2>
+              <p class="text-justify font-[sofiaproregular]">
+                Amazon Account Management offer Amazon seller services that can
+                help you further your brand online while focusing on your core
+                business. Hiring Amazon experts like Gonukkad for the best
+                Amazon seller account management services can provide you with
+                strategic insights to scale up your Amazon online business
+                presence, generating more revenues.
+              </p>
+            </div>
+            <div class="flex flex-col md:w-1/2">
+              <img
+                class="border border-red-400 rounded-2xl"
+                src="./assets/images/Amazon-Account-Management.jpg"
+                alt="Amazon-Account-Management.jpg"
+              />
+            </div>
+          </div>
+
+          <div
+            class="flex flex-col md:flex-row-reverse w-full justify-between gap-16"
+          >
+            <div class="flex flex-col justify-center space-y-6 md:w-1/2">
+              <h2 class="text-xl font-[sofiaprosemibold]">
+                Why should you Hire an Amazon Agency for your Business?
+              </h2>
+              <p class="text-justify font-[sofiaproregular]">
+                Hiring an Amazon agency for Amazon seller account management
+                services is the best way to make sure your business goals are
+                reached. Gonukkad has a team of experts in various fields who
+                can help you with anything from reaching new customers,
+                increasing sales and decreasing costs for production time spent
+                on marketing material - all while
+              </p>
+            </div>
+            <div class="flex flex-col md:w-1/2">
+              <img
+                class="border border-red-400 rounded-2xl"
+                src="./assets/images/Hire-an-Amazon-Agency-for-my-Business.jpg"
+                alt="Amazon-Account-Management.jpg"
+              />
+            </div>
+          </div>
+
+          <div class="flex flex-col md:flex-row w-full justify-between gap-16">
+            <div class="flex flex-col justify-center space-y-6 md:w-1/2">
+              <h2 class="text-xl font-[sofiaprosemibold]">
+                How can Sub-user Access on Amazon benefit you?
+              </h2>
+              <p class="text-justify font-[sofiaproregular]">
+                In order to protect your Amazon account from being compromised,
+                sub-users provide limited access and control to third-party
+                teams, preventing any one person or team from having full
+                unrestricted permissions and ensuring the security of yourself
+                and other users who rely on the account for their business
+                success. Amazon seller services keep you updated on all
+                activities related to the security of your Amazon account.
+              </p>
+            </div>
+            <div class="flex flex-col md:w-1/2">
+              <img
+                class="border border-red-400 rounded-2xl"
+                src="./assets/images/Amazon-Account-Management-Why-it-Matters.jpg"
+                alt="Amazon-Account-Management.jpg"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="w-full px-0 py-8 !pb-0 bg-white overflow-hidden font-[sofiaproregular] space-y-4 relative ">
+
+        <h3 class="text-[red] text-center font-[sofiaproregular]">Testimonials</h3>
+        <p class="sm:text-3xl  text-xl font-[sofiaprosemibold] text-center">
+            What Our Clients Say About Us
+        </p>
+
+        <hr class="w-20 mx-auto bg-[#EB3E23] border-none text-red-500 h-1" />
+
+        <div id="slider_3" class="slider  select-none ">
+            <div
+                class="overflow-hidden relative mx-auto  w-[calc(var(--slidewidth3))] md:w-[calc(var(--slidewidth3)*2)] xl:w-[calc(var(--slidewidth3)*3)]  h-[6 00px]">
+                <div id="slides_3"
+                    class="slides flex relative top-0 left-[calc(var(--slidewidth3)*-3)] w-[10000px] overflow-hidden">
+                    <span
+                        class="slide p-4 w-[calc(var(--slidewidth3))]    h-[400px] flex flex-col box-border transition-all duration-1000 relative ">
+                        <div class="border rounded-2xl  item-center flex justify-center bg-[#D3D7FA] p-4">
+                            <div class="text-center flex flex-col items-center space-y-2">
+                                <img src="./assets/Testimonials/Shalu_Rastogi.webp" alt="Shalu Rastogi" srcset=""
+                                    class="rounded-[70px] w-32 h-32">
+                                <h2 class="text-[#EB3E23] font-[sofiaprosemibold] text-2xl">Shalu Rastogi</h2>
+                                <h3 class="font-bold">Dhairya Creations</h3>
+                                <p>"I am very happy with your service. Very helpful staff and they have resolved my
+                                    issues related to my account. Choosing Gonukkad was one of the best decisions I made
+                                    for my
+                                    ecommerce venture."</p>
+                            </div>
+                        </div>
+
+                    </span>
+                    <span
+                        class="slide p-4 w-[calc(var(--slidewidth3))] h-[400px] flex flex-col box-border transition-all duration-1000 relative ">
+                        <div class="border rounded-2xl  item-center flex justify-center bg-[#D3D7FA] p-4">
+                            <div class="text-center flex flex-col items-center space-y-2">
+                                <img src="./assets/Testimonials/Dharmendra_Pal.webp" alt="Dharmendra Pal" srcset=""
+                                    class="rounded-[70px] w-32 h-32">
+                                <h2 class="text-[#EB3E23] font-[sofiaprosemibold] text-2xl">Dharmendra Pal</h2>
+                                <h3 class="font-bold"> Sunlight Hub </h3>
+                                <p>"I am completely happy how my account is presently being managed. Being a Member
+                                    it is foremost to be accounted to a support person as rectifying and resolution from
+                                    one end.
+                                    Overall my experience with Gonukkad.com is superb."</p>
+                            </div>
+                        </div>
+
+                    </span>
+                    <span
+                        class="slide p-4 w-[calc(var(--slidewidth3))] h-[400px] flex flex-col box-border transition-all duration-1000 relative ">
+                        <div class="border rounded-2xl  item-center flex justify-center bg-[#D3D7FA] p-4">
+                            <div class="text-center flex flex-col items-center space-y-2">
+                                <img src="./assets/Testimonials/Saurabh_Kumar.webp" alt="Soorabh Kumar" srcset=""
+                                    class="rounded-[70px] w-32 h-32">
+                                <h2 class="text-[red] font-bold text-2xl">Soorabh Kumar</h2>
+                                <h3 class="font-bold"> Urban Handicraft </h3>
+                                <p>"Gonukkad has become the solution that my company was looking for when it comes
+                                    to connecting with the right services. I am getting along with this service really
+                                    well. Hoping to
+                                    be their lifetime member."</p>
+                            </div>
+                        </div>
+
+                    </span>
+                    <span
+                        class="slide p-4 w-[calc(var(--slidewidth3))] h-[400px] flex flex-col box-border transition-all duration-1000 relative ">
+                        <div class="border rounded-2xl  item-center flex justify-center bg-[#D3D7FA] p-4">
+                            <div class="text-center flex flex-col items-center space-y-2">
+                                <img src="./assets/Testimonials/Inderjeet.webp" alt="Inderjeet" srcset=""
+                                    class="rounded-[70px] w-32 h-32">
+                                <h2 class="text-[#EB3E23] font-[sofiaprosemibold] text-2xl">Inderjeet</h2>
+                                <h3 class="font-bold"> Universal Furniture </h3>
+                                <p>"I have been using their services for a while now and they never disappoint me
+                                    once. The Account manager is very considerate, he helped me like he was promoting
+                                    his own business
+                                    at the portal, I am amazed with the working."</p>
+                            </div>
+                        </div>
+
+                    </span>
+                    <span
+                        class="slide p-4 w-[calc(var(--slidewidth3))] h-[400px] flex flex-col box-border transition-all duration-1000 relative ">
+                        <div class="border rounded-2xl  item-center flex justify-center bg-[#D3D7FA] p-4">
+                            <div class="text-center flex flex-col items-center space-y-2">
+                                <img src="./assets/Testimonials/Krishan Kumar.webp" alt="Krishan Kumar Madan" srcset=""
+                                    class="rounded-[70px] w-32 h-32">
+                                <h2 class="text-[#EB3E23] font-[sofiaprosemibold] text-2xl">Krishan Kumar Madan</h2>
+                                <h3 class="font-bold"> Madaan Traders </h3>
+                                <p>"Currently we all are doing business virtually, Where we can not easily identify
+                                    genuine companies. But Gonukkad.com is very helpful. Thank you for your assistance
+                                    and good services."</p>
+                            </div>
+                        </div>
+
+                    </span>
+                    <span
+                        class="slide p-4 w-[calc(var(--slidewidth3))] h-[400px] flex flex-col box-border transition-all duration-1000 relative ">
+                        <div class="border rounded-2xl  item-center flex justify-center bg-[#D3D7FA] p-4">
+                            <div class="text-center flex flex-col items-center space-y-2">
+                                <img src="./assets/Testimonials/Nishar.webp" alt="Nishar" srcset=""
+                                    class="rounded-[70px] w-32 h-32">
+                                <h2 class="text-[#EB3E23] font-[sofiaprosemibold] text-2xl">Nishar</h2>
+                                <h3 class="font-bold"> Sman </h3>
+                                <p>"It was quite difficult to choose the right business partner for my venture. I
+                                    was approached by Gonukkad. The team has helped me with their projection about how
+                                    my product
+                                    should be presented. I would give them 5 star ratings. "</p>
+                            </div>
+                        </div>
+
+                    </span>
+                    <span
+                        class="slide p-4 w-[calc(var(--slidewidth3))] h-[400px] flex flex-col box-border transition-all duration-1000 relative ">
+                        <div class="border rounded-2xl  item-center flex justify-center bg-[#D3D7FA] p-4">
+                            <div class="text-center flex flex-col items-center space-y-2">
+                                <img src="./assets/Testimonials/Ritesh.webp" alt="Ritesh Saini" srcset=""
+                                    class="rounded-[70px] w-32 h-32">
+                                <h2 class="text-[#EB3E23] font-[sofiaprosemibold] text-2xl">Ritesh Saini</h2>
+                                <h3 class="font-bold"> OMAYA </h3>
+                                <p>"The best platform to grow your business and all teams are also the best team work is
+                                    wonderful."</p>
+                            </div>
+                        </div>
+
+                    </span>
+                    <span
+                        class="slide p-4 w-[calc(var(--slidewidth3))] h-[400px] flex flex-col box-border transition-all duration-1000 relative ">
+                        <div class="border rounded-2xl  item-center flex justify-center bg-[#D3D7FA] p-4">
+                            <div class="text-center flex flex-col items-center space-y-2">
+                                <img src="./assets/Testimonials/Meenakshi Kapoor.webp" alt="Meenakshi Kapoor" srcset=""
+                                    class="rounded-[70px] w-32 h-32">
+                                <h2 class="text-[#EB3E23] font-[sofiaprosemibold] text-2xl">Meenakshi Kapoor</h2>
+                                <h3 class="font-bold"> Kapsons Mart </h3>
+                                <p>"Thanks for your timely help. Appreciating your work in a perfect manner, And as you
+                                    see it needs to be result oriented hope your efforts will give us that fruitful
+                                    business."</p>
+                            </div>
+                        </div>
+
+                    </span>
+                    <span
+                        class="slide p-4 w-[calc(var(--slidewidth3))] h-[400px] flex flex-col box-border transition-all duration-1000 relative ">
+                        <div class="border rounded-2xl  item-center flex justify-center bg-[#D3D7FA] p-4">
+                            <div class="text-center flex flex-col items-center space-y-2">
+                                <img src="./assets/Testimonials/Haresh mansukhbhai virani.webp" alt="Haresh Mansukhbhai Virani" srcset=""
+                                    class="rounded-[70px] w-32 h-32">
+                                <h2 class="text-[#EB3E23] font-[sofiaprosemibold] text-2xl">Haresh Mansukhbhai Virani
+                                </h2>
+                                <h3 class="font-bold"> Patlani </h3>
+                                <p>"Thank you for sharing your work with us. I am really glad to work with your team,
+                                    and I think this catalog will be exceedingly helpful for the visitors. We also
+                                    appreciate your work."</p>
+                            </div>
+                        </div>
+
+                    </span>
+                    <span
+                        class="slide p-4 w-[calc(var(--slidewidth3))] h-[500px] flex flex-col box-border transition-all duration-1000 relative ">
+                        <div class="border rounded-2xl  item-center flex justify-center bg-[#D3D7FA] p-4">
+                            <div class="text-center flex flex-col items-center space-y-2">
+                                <img src="./assets/Testimonials/SUSOBHAN DEY.webp" alt="Susobhan Dey" srcset=""
+                                    class="rounded-[70px] w-32 h-32">
+                                <h2 class="text-[#EB3E23] font-[sofiaprosemibold] text-2xl"> Susobhan Dey</h2>
+                                <h3 class="font-bold"> House Of Furry </h3>
+                                <p>"I am really happy to work with GoNukkad. They understood my requirements. Help me to
+                                    generate sales on Amazon, Meesho. They are reachable and closely work with you to
+                                    solve the problem. If anyone is looking to generate sales online you can definitely
+                                    consider them as one of the options."</p>
+                            </div>
+                        </div>
+
+                    </span>
+
+
+
+                </div>
+            </div>
+            <div class="flex justify-between">
+
+                <button id="prev_3"></button>
+                <button id="next_3"></button>
+
+            </div>
+
+
+            <!-- <hr class="w-full mx-auto bg-gray-400 mt-12  h-[2px]" /> -->
+        </div>
+
+
+    </div>
+
+      <section
+        class="space-y-5 !m-0 md:pt-5 pt-10 pb-10 md:pb-0 px-4 md:px-20 lg:px-24 border-b-2 overflow-hidden w-full"
+      >
+        <div class="w-fit text-[#f26333] font-[sofiaproregular]">
+          Contact Us
+        </div>
+        <div class="w-fit text-2xl md:text-3xl font-[sofiaprosemibold]">
+          Take Charge of Your Online Business Now
+        </div>
+        <div class="flex lg:space-x-5 max-w-screen-2xl mx-auto">
+          <div class="hidden lg:block self-end w-1/3">
+            <img src="./assets/images/contact-pic.webp" alt="" class="" />
+          </div>
+          <div
+            class="bg-white mt-6 rounded-xl shadow-2xl shadow-gray-700 p-8 mb-10 flex flex-col md:flex-row justify-between gap-10 md:gap-5 w-full"
+          >
+            <div class="w-full md:w-1/2 md:p-5">
+              <form action="" class="space-y-12">
+                <div class="relative font-[sofiaproregular]">
+                  <input
+                    type="text"
+                    name="fullname"
+                    id="fullname"
+                    class="block appearance-none outline-none focus:outline-none hover:ring-0 border-b-[1px] border-[#f26333] p-0 peer w-full"
+                    placeholder=" "
+                    required
+                  />
+                  <label
+                    for="fullname"
+                    class="absolute top-0 -translate-y-6 scale-75 origin-[0] peer-focus:-translate-y-6 peer-focus:scale-75 peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 transform-all duration-300"
+                    >Full Name</label
+                  >
+                  <label
+                    for="fullname"
+                    class="w-fit mt-4 hidden py-3 px-6 bg-red-100 text-red-900 rounded"
+                    >This field is required</label
+                  >
+                </div>
+                <div class="relative font-[sofiaproregular]">
+                  <input
+                    type="email"
+                    name="email"
+                    id="email"
+                    class="block appearance-none outline-none focus:outline-none hover:ring-0 border-b-[1px] border-[#f26333] p-0 peer w-full"
+                    placeholder=" "
+                  />
+                  <label
+                    for="email"
+                    class="absolute top-0 -translate-y-6 scale-75 origin-[0] peer-focus:-translate-y-6 peer-focus:scale-75 peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 transform-all duration-300"
+                    >Email</label
+                  >
+                </div>
+                <div class="relative font-[sofiaproregular]">
+                  <input
+                    type="text"
+                    name="contactnumber"
+                    id="contactnumber"
+                    class="block appearance-none outline-none focus:outline-none hover:ring-0 border-b-[1px] border-[#f26333] p-0 peer w-full"
+                    placeholder=" "
+                    required
+                  />
+                  <label
+                    for="contactnumber"
+                    class="absolute top-0 -translate-y-6 scale-75 origin-[0] peer-focus:-translate-y-6 peer-focus:scale-75 peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 transform-all duration-300"
+                    >Contact</label
+                  >
+                </div>
+                <div class="relative font-[sofiaproregular]">
+                  <textarea
+                    name="message"
+                    id="message"
+                    rows="1"
+                    class="block appearance-none border-b-[1px] border-[#f26333] focus:outline-none p-0 peer w-full"
+                    placeholder=" "
+                    required
+                  ></textarea>
+                  <label
+                    for="message"
+                    class="absolute top-0 left-0 -translate-y-6 scale-75 origin-[0] peer-focus:-translate-y-6 peer-focus:scale-75 peer-focus:left-0 peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 transform-all duration-300"
+                    >Message</label
+                  >
+                </div>
+                <button
+                  class="bg-[#f26333] font-[sofiaproregular] w-fit px-6 pt-2 pb-2 rounded-full text-white cursor-pointer uppercase select-none hover:bg-orange-800"
+                >
+                  Submit
+                </button>
+              </form>
+            </div>
+            <div class="w-full md:w-1/2 md:pt-8 space-y-4">
+              <div class="lg:flex gap-10">
+                <div class="font-[sofiaprosemibold] text-lg">Email:</div>
+                <div class="text-[#f26333] font-[sofiaproregular] underline">
+                  <a href="mailto:connect@gonukkad.com">connect@gonukkad.com</a>
+                  <a href="mailto:partnerships@gonukkad.com">partnerships@gonukkad.com</a>
+                </div>
+                
+              </div>
+              <div class="lg:flex gap-5">
+                <div class="font-[sofiaprosemibold] text-lg">Helpline:</div>
+                <div>
+                  <div class="text-[#f26333] font-[sofiaproregular] underline">
+                    <a href="tel:080-692-28600">080-692-28600</a>
+                  </div>
+                  <div class="text-[#f26333] font-[sofiaproregular] underline">
+                    <a href="tel:040-681-52890">040-681-52890</a>
+                  </div>
+                  <div class="font-[sofiaproregular]">
+                    [Mon-Saturday, 10 AM to 6PM]
+                  </div>
+                </div>
+              </div>
+              <div class="lg:flex gap-5">
+                <div class="font-[sofiaprosemibold] text-lg">Address:</div>
+                <div class="font-[sofiaproregular]">
+                  Unit- 521, Tower B4, Spaze I Tech Park, Sector 49, Sohna Road,
+                  Gurugram, Haryana - 122018
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="fixed bottom-10 right-2 space-y-2 *:cursor-pointer z-30">
+        <div
+          class="bg-[#B20000] flex flex-col place-content-center size-14 rounded-xl text-white text-sm items-center relative -top-20 px-4 shadow-2xl shadow-[#B20000] animate-pulse sendquery"
+          id="formmodelbutton"
+        >
+          <span>Send</span><span>Query</span>
+        </div>
+        <a href="tel:+91-806-922-8600" class="block" aria-label="Gonukkad Call">
+          <div
+            class="bg-[#f26333] flex items-center justify-center size-14 rounded"
+          >
+            <i class="fa-solid fa-phone text-white scale-[2]"></i>
+          </div>
+        </a>
+        <a
+          href="https://api.whatsapp.com/send/?phone=9289112850&text&app_absent=0"
+          class="block"
+          aria-label="Gonukkad Whatsapp"
+        >
+          <div
+            class="bg-[#00a084] flex items-center justify-center size-14 rounded"
+          >
+            <i class="fa-brands fa-whatsapp text-white scale-[2]"></i>
+          </div>
+        </a>
+      </section>
+    </main>
+    <section
+      class="hidden w-screen h-screen overflow-hidden bg-black/60 backdrop-blur fixed top-0 px-10 z-50"
+      id="formmodel"
+    >
+      <div
+        class="w-[90vw] md:w-1/2 bg-white h-fit absolute top-[20%] md:top-[15%] left-[50%] -translate-x-[50%] rounded-xl p-10 max-w-screen-lg mx-auto"
+        id="formmodelbox"
+      >
+        <div class="border-b-2 border-[#f26333] font-bold text-2xl pb-1 mb-10">
+          Get In Touch
+        </div>
+        <div class="w-full md:p-5">
+          <form action="" class="space-y-12">
+            <div class="relative">
+              <input
+                type="text"
+                name="ModelFormfullname"
+                id="ModelFormfullname"
+                class="block appearance-none outline-none focus:outline-none hover:ring-0 border-b-[1px] border-[#f26333] p-0 peer w-full"
+                placeholder=" "
+                required
+              />
+              <label
+                for="ModelFormfullname"
+                class="absolute top-0 -translate-y-6 scale-75 origin-[0] peer-focus:-translate-y-6 peer-focus:scale-75 peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 transform-all duration-300"
+                >Full Name</label
+              >
+              <label
+                for="ModelFormfullname"
+                class="w-fit mt-4 hidden py-3 px-6 bg-red-100 text-red-900 rounded"
+                >This field is required</label
+              >
+            </div>
+            <div class="relative">
+              <input
+                type="email"
+                name="ModelFormemail"
+                id="ModelFormemail"
+                class="block appearance-none outline-none focus:outline-none hover:ring-0 border-b-[1px] border-[#f26333] p-0 peer w-full"
+                placeholder=" "
+              />
+              <label
+                for="ModelFormemail"
+                class="absolute top-0 -translate-y-6 scale-75 origin-[0] peer-focus:-translate-y-6 peer-focus:scale-75 peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 transform-all duration-300"
+                >Email</label
+              >
+            </div>
+            <div class="relative">
+              <input
+                type="text"
+                name="ModelFormcontactnumber"
+                id="ModelFormcontactnumber"
+                class="block appearance-none outline-none focus:outline-none hover:ring-0 border-b-[1px] border-[#f26333] p-0 peer w-full"
+                placeholder=" "
+                required
+              />
+              <label
+                for="ModelFormcontactnumber"
+                class="absolute top-0 -translate-y-6 scale-75 origin-[0] peer-focus:-translate-y-6 peer-focus:scale-75 peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 transform-all duration-300"
+                >Contact</label
+              >
+            </div>
+            <div class="relative">
+              <textarea
+                name="ModelFormmessage"
+                id="ModelFormmessage"
+                rows="1"
+                class="block appearance-none border-b-[1px] border-[#f26333] focus:outline-none p-0 peer w-full"
+                placeholder=" "
+                required
+              ></textarea>
+              <label
+                for="ModelFormmessage"
+                class="absolute top-0 left-0 -translate-y-6 scale-75 origin-[0] peer-focus:-translate-y-6 peer-focus:scale-75 peer-focus:left-0 peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 transform-all duration-300"
+                >Message</label
+              >
+            </div>
+            <button
+              class="bg-[#f26333] w-fit px-6 py-2 rounded-full text-white cursor-pointer uppercase select-none hover:bg-orange-800"
+            >
+              Submit Now
+            </button>
+          </form>
+        </div>
+        <div
+          class="absolute top-0 right-0 -translate-y-[100%] cursor-pointer"
+          id="formmodelclosebtn"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="28"
+            height="28"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="white"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </div>
+      </div>
+    </section>
+
+    <!-- footer_section -->
+
+    <!-- gonukkad.com -->
+
+    <div class="w-full bg-gray-200 h-20 flex justify-center items-center">
+      <!-- <p>GONUKKAD.COM <span>YOUR LOCAL NEIGHBOURHOOD</span> </p> -->
+      <a href="https://www.gonukkad.com/" target="_blank"
+        ><img
+          src="./assets/images/gonukkad-text.webp"
+          alt="gonukkad-text"
+          srcset=""
+          class="lg:h-8"
+      /></a>
+    </div>
+
+    <!-- footer_section -->
+    <div
+      class="bg-[#1E1E1E] h-auto min-[971px]:px-24 min-[570px]:px-14 px-2 py- py-14 font-[sofiaproregular]"
+    >
+      <div class="grid min-[990px]:grid-cols-3 grid-cols-1 gap-8">
+        <div>
+          <ul class="text-white">
+            <h1 class="text-lg mb-2.5 cursor-auto font-[sofiaprosemibold]">
+              Seller Registrations
+            </h1>
+
+            <li>
+              <a
+                href="#"
+                class="hover:text-red-500 text-sm cursor-pointer font-[sofiaproregular]"
+                >> Amazon Seller Registration</a
+              >
+            </li>
+
+            <li>
+              <a href="#" class="hover:text-red-500 text-sm cursor-pointer"
+                >> Flipkart Seller Registration</a
+              >
+            </li>
+
+            <li>
+              <a href="#" class="hover:text-red-500 text-sm cursor-pointer"
+                >> Meesho Seller Registration</a
+              >
+            </li>
+
+            <li>
+              <a href="#" class="hover:text-red-500 text-sm cursor-pointer"
+                >> JioMart Seller Registration</a
+              >
+            </li>
+
+            <li>
+              <a href="#" class="hover:text-red-500 text-sm cursor-pointer"
+                >> eBay Seller Registration</a
+              >
+            </li>
+
+            <li>
+              <a href="#" class="hover:text-red-500 text-sm cursor-pointer"
+                >> Myntra Seller Registration</a
+              >
+            </li>
+
+            <li>
+              <a href="#" class="hover:text-red-500 text-sm cursor-pointer"
+                >> Nykaa Seller Registration</a
+              >
+            </li>
+
+            <li>
+              <a href="#" class="hover:text-red-500 text-sm cursor-pointer"
+                >> Etsy Seller Registration</a
+              >
+            </li>
+          </ul>
+        </div>
+        <div>
+          <ul class="text-white">
+            <h1 class="text-lg mb-2.5 cursor-auto font-[sofiaprosemibold]">
+              Full Account Management Services
+            </h1>
+            <li>
+              <a
+                class="hover:text-red-500 text-sm cursor-pointer"
+                href="https://www.gonukkad.com/amazon-account-management-services"
+              >
+                > Amazon Account Management Services
+              </a>
+            </li>
+            <li>
+              <a
+                class="hover:text-red-500 text-sm cursor-pointer"
+                href="https://www.gonukkad.com/flipkart-account-management-services"
+              >
+                > Flipkart Account Management Services
+              </a>
+            </li>
+            <li>
+              <a
+                class="hover:text-red-500 text-sm cursor-pointer"
+                href="https://www.gonukkad.com/meesho-account-management-services"
+              >
+                > Meesho Account Management Services
+              </a>
+            </li>
+            <li>
+              <a
+                class="hover:text-red-500 text-sm cursor-pointer"
+                href="https://www.gonukkad.com/jiomart-account-management-services"
+              >
+                > JioMart Account Management Services
+              </a>
+            </li>
+            <li>
+              <a
+                class="hover:text-red-500 text-sm cursor-pointer"
+                href="https://www.gonukkad.com/ebay-account-management-services"
+              >
+                > eBay Account Management Services
+              </a>
+            </li>
+            <li>
+              <a class="hover:text-red-500 text-sm cursor-pointer" href="#">
+                > Myntra Account Management Services
+              </a>
+            </li>
+            <li>
+              <a class="hover:text-red-500 text-sm cursor-pointer" href="#">
+                > Nykaa Account Management Services
+              </a>
+            </li>
+            <li>
+              <a
+                class="hover:text-red-500 text-sm cursor-pointer"
+                href="https://www.gonukkad.com/etsy-account-management-services"
+              >
+                > Etsy Account Management Services
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <ul class="text-white">
+            <h1 class="text-lg mb-2.5 cursor-auto font-[sofiaprosemibold]">
+              Listing & Cataloging Services
+            </h1>
+            <li>
+              <a
+                class="hover:text-red-500 text-sm cursor-pointer"
+                href="https://www.gonukkad.com/amazon-listing-cataloging-services"
+              >
+                > Amazon Listing & Cataloging Services
+              </a>
+            </li>
+            <li>
+              <a
+                class="hover:text-red-500 text-sm cursor-pointer"
+                href="https://www.gonukkad.com/flipkart-listing-cataloging-services"
+              >
+                > Flipkart Listing & Cataloging Services
+              </a>
+            </li>
+            <li>
+              <a
+                class="hover:text-red-500 text-sm cursor-pointer"
+                href="https://www.gonukkad.com/meesho-listing-cataloging-services"
+              >
+                > Meesho Listing & Cataloging Services
+              </a>
+            </li>
+            <li>
+              <a
+                class="hover:text-red-500 text-sm cursor-pointer"
+                href="https://www.gonukkad.com/jiomart-listing-cataloging-services"
+              >
+                > JioMart Listing & Cataloging Services
+              </a>
+            </li>
+            <li>
+              <a
+                class="hover:text-red-500 text-sm cursor-pointer"
+                href="https://www.gonukkad.com/ebay-listing-cataloging-services"
+              >
+                > eBay Listing & Cataloging Services
+              </a>
+            </li>
+            <li>
+              <a class="hover:text-red-500 text-sm cursor-pointer" href="#">
+                > Myntra Listing & Cataloging Services
+              </a>
+            </li>
+            <li>
+              <a class="hover:text-red-500 text-sm cursor-pointer" href="#">
+                > Nykaa Listing & Cataloging Services
+              </a>
+            </li>
+            <li>
+              <a class="hover:text-red-500 text-sm cursor-pointer" href="#">
+                > Etsy Listing & Cataloging Services
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <ul class="text-white">
+            <h1 class="text-lg mb-2.5 cursor-auto font-[sofiaprosemibold]">
+              Advertising Services
+            </h1>
+            <li>
+              <a
+                class="hover:text-red-500 text-sm cursor-pointer"
+                href="https://www.gonukkad.com/amazon-advertising-services"
+              >
+                > Amazon Advertising Services
+              </a>
+            </li>
+            <li>
+              <a
+                class="hover:text-red-500 text-sm cursor-pointer"
+                href="https://www.gonukkad.com/flipkart-advertising-services"
+              >
+                > Flipkart Advertising Services
+              </a>
+            </li>
+            <li>
+              <a
+                class="hover:text-red-500 text-sm cursor-pointer"
+                href="https://www.gonukkad.com/meesho-advertising-services"
+              >
+                > Meesho Advertising Services
+              </a>
+            </li>
+            <li>
+              <a
+                class="hover:text-red-500 text-sm cursor-pointer"
+                href="https://www.gonukkad.com/jiomart-advertising-services"
+              >
+                > JioMart Advertising Services
+              </a>
+            </li>
+            <li>
+              <a
+                class="hover:text-red-500 text-sm cursor-pointer"
+                href="https://www.gonukkad.com/ebay-advertising-services"
+              >
+                > eBay Advertising Services
+              </a>
+            </li>
+            <li>
+              <a
+                class="hover:text-red-500 text-sm cursor-pointer"
+                href="https://www.gonukkad.com/amazon-brand-store-services"
+              >
+                > Amazon - Brand Store
+              </a>
+            </li>
+            <li>
+              <a
+                class="hover:text-red-500 text-sm cursor-pointer"
+                href="https://www.gonukkad.com/amazon-a-plus-listing-services"
+              >
+                > Amazon - A+ Listing
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <ul class="text-white">
+            <h1 class="text-lg mb-2.5 cursor-auto font-[sofiaprosemibold]">
+              Blogs
+            </h1>
+            <li>
+              <a
+                class="hover:text-red-500 text-sm cursor-pointer"
+                href="https://www.gonukkad.com/how-to-sell-on-amazon-in-india"
+              >
+                > How To Sell On Amazon In India
+              </a>
+            </li>
+            <li>
+              <a
+                class="hover:text-red-500 text-sm cursor-pointer"
+                href="https://www.gonukkad.com/how-to-sell-on-flipkart-in-india"
+              >
+                > How To Sell On Flipkart In India
+              </a>
+            </li>
+            <li>
+              <a
+                class="hover:text-red-500 text-sm cursor-pointer"
+                href="https://www.gonukkad.com/how-to-sell-on-meesho-in-india"
+              >
+                > How To Sell On Meesho In India
+              </a>
+            </li>
+            <li>
+              <a
+                class="hover:text-red-500 text-sm cursor-pointer"
+                href="https://www.gonukkad.com/how-to-sell-on-alibaba-in-india"
+              >
+                > How to Sell On Alibaba In India
+              </a>
+            </li>
+            <li>
+              <a
+                class="hover:text-red-500 text-sm cursor-pointer"
+                href="https://www.gonukkad.com/how-to-sell-on-jiomart"
+              >
+                > How To Sell On JioMart In India
+              </a>
+            </li>
+            <li>
+              <a
+                class="hover:text-red-500 text-sm cursor-pointer"
+                href="https://www.gonukkad.com/how-to-sell-on-ebay"
+              >
+                > How To Sell On eBay
+              </a>
+            </li>
+            <li>
+              <a
+                class="hover:text-red-500 text-sm cursor-pointer"
+                href="https://www.gonukkad.com/how-to-sell-on-myntra-in-india"
+              >
+                > How To Sell On Myntra In India
+              </a>
+            </li>
+            <li>
+              <a
+                class="hover:text-red-500 text-sm cursor-pointer"
+                href="https://www.gonukkad.com/how-to-sell-on-nykaa"
+              >
+                > How To Sell On Nykaa In India
+              </a>
+            </li>
+            <li>
+              <a
+                class="hover:text-red-500 text-sm cursor-pointer"
+                href="https://www.gonukkad.com/how-to-sell-on-etsy"
+              >
+                > How To Sell On Etsy
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <ul class="text-white">
+            <h1 class="text-lg mb-2.5 cursor-auto font-[sofiaprosemibold]">
+              Important Pages
+            </h1>
+            <li>
+              <a
+                class="hover:text-red-500 text-sm cursor-pointer"
+                href="https://www.gonukkad.com/why-gonukkad-who-we-are"
+              >
+                > Who We Are
+              </a>
+            </li>
+            <li>
+              <a
+                class="hover:text-red-500 text-sm cursor-pointer"
+                href="https://www.gonukkad.com/our-story-who-we-are"
+              >
+                > Our Story
+              </a>
+            </li>
+            <li>
+              <a
+                class="hover:text-red-500 text-sm cursor-pointer"
+                href="https://www.gonukkad.com/contact-us"
+              >
+                > Contact Us
+              </a>
+            </li>
+            <li>
+              <a
+                class="hover:text-red-500 text-sm cursor-pointer"
+                href="https://www.gonukkad.com/payment"
+              >
+                > Payment
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Last_footer_section -->
+
+    <div class="bg-black items-center flex flex-col p-4 gap-2">
+      <div class="flex gap-3">
+        <a href="https://www.facebook.com/gonukkadcom" target="_blank"
+          ><img
+            src="./assets/images/facebook.png"
+            alt=""
+            class="w-8 h-8 cursor-pointer"
+        /></a>
+        <a href="https://twitter.com/Gonukkadcom" target="_blank"
+          ><img
+            src="./assets/images/twitter.png"
+            alt=""
+            class="w-8 h-8 cursor-pointer"
+        /></a>
+        <a href="https://www.linkedin.com/in/gonukkadcom/" target="_blank"
+          ><img
+            src="./assets/images/linkedin.png"
+            alt=""
+            class="w-8 h-8 cursor-pointer"
+        /></a>
+        <a href="https://www.instagram.com/gonukkadcom/" target="_blank"
+          ><img
+            src="./assets/images/instagram.png"
+            alt=""
+            class="w-8 h-8 cursor-pointer"
+        /></a>
+      </div>
+      <div class="text-white text-[11px] font-[sofiaproregular]">
+        <p class="text-center">
+          BY CONTINUING PAST THIS PAGE, YOU AGREE TO OUR
+          <span class="hover:text-red-800 text-[red] cursor-pointer underline">
+            <a href="https://www.gonukkad.com/terms-of-service"
+              >TERMS OF SERVICE</a
+            >
+          </span>
+          AND
+          <span class="hover:text-red-800 text-[red] cursor-pointer underline"
+            ><a href="https://www.gonukkad.com/privacy-policy"
+              >PRIVACY POLICY</a
+            >
+          </span>
+          , GONUKKAD.COM. ALL RIGHTS RESERVED.
+        </p>
+      </div>
+    </div>
+
+    <button
+      class="bg-black opacity-100 hover:opacity-70 rounded-[10px] fixed bottom-10 left-4 rotate-180"
+      id="mybutton"
+      onclick="topMove() "
+    >
+      <img src="./assets/images/arrow.png" alt="" srcset="" class="w-12" />
+    </button>
+    <script>
+      window.onscroll = function () {
+        scrollFunction();
+      };
+
+      function scrollFunction() {
+        if (
+          document.body.scrollTop > 30 ||
+          document.documentElement.scrollTop > 30
+        ) {
+          mybutton.style.display = "block";
+        } else {
+          mybutton.style.display = "none";
+        }
+      }
+      // function topMove() {
+      //   document.documentElement.scrollTop = 0;
+      // }
+      function topMove() {
+        var scrollToTopBtn = document.getElementById("mybutton");
+
+  // Add click event listener to the button
+  scrollToTopBtn.addEventListener("click", function() {
+    // Scroll to the top of the page with smooth animation
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  });
+      }
+
+
+      
+    </script>
+
+    <script>
+      function MenuToggle() {
+        let bars = document.getElementById("menubars");
+        let cross = document.getElementById("menucross");
+        let menu = document.getElementById("menu");
+
+        bars.classList.toggle("hidden");
+        cross.classList.toggle("hidden");
+        menu.classList.toggle("hidden");
+      }
+
+      dropdown = document.getElementById("dropdown");
+      dropdownshowbutton = document.getElementById("dropdownshowbutton");
+
+      dropdown2 = document.getElementById("dropdown2");
+      dropdownshowbutton2 = document.getElementById("dropdownshowbutton2");
+
+      modelformbtn = document.getElementById("formmodelbutton");
+      modelform = document.getElementById("formmodel");
+      modelformbox = document.getElementById("formmodelbox");
+      modelformclosebtn = document.getElementById("formmodelclosebtn");
+
+      window.addEventListener("click", (el) => {
+        e = el.target;
+
+        while (e) {
+          if (e == dropdownshowbutton) {
+            dropdown.classList.toggle("hidden");
+            dropdown2.classList.add("hidden");
+            return;
+          }
+
+          if (e == dropdownshowbutton2) {
+            dropdown2.classList.toggle("hidden");
+            dropdown.classList.add("hidden");
+            return;
+          }
+          if (e == dropdown || e == dropdown2 || e == modelformbox) {
+            return;
+          }
+
+          if (e == modelformbtn || e == modelformclosebtn) {
+            modelform.classList.toggle("hidden");
+            return;
+          }
+
+          e = e.parentNode;
+        }
+
+        dropdown.classList.add("hidden");
+        dropdown2.classList.add("hidden");
+
+        modelform.classList.add("hidden");
+      });
+    </script>
+    <script
+      src="https://kit.fontawesome.com/565a3e4a16.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- first slider -->
+
+    <script>
+      var slider = document.getElementById("slider"),
+        sliderItems = document.getElementById("slides"),
+        prev = document.getElementById("prev"),
+        next = document.getElementById("next");
+
+      function slide(wrapper, items, prev, next) {
+        var posX1 = 0,
+          posX2 = 0,
+          posInitial,
+          posFinal,
+          threshold = 100,
+          slides = items.getElementsByClassName("slide"),
+          slidesLength = slides.length,
+          slideSize = items.getElementsByClassName("slide")[0].offsetWidth,
+          firstSlide = slides[0],
+          Slide2nd = slides[1],
+          Slide3rd = slides[2],
+          Slide4th = slides[3],
+          lastSlide = slides[slidesLength - 1],
+          last2ndSlide = slides[slidesLength - 2],
+          last3rdSlide = slides[slidesLength - 3],
+          last4thSlide = slides[slidesLength - 4],
+          cloneFirst = firstSlide.cloneNode(true),
+          clone2nd = Slide2nd.cloneNode(true),
+          clone3rd = Slide3rd.cloneNode(true),
+          clone4th = Slide4th.cloneNode(true),
+          cloneLast = lastSlide.cloneNode(true),
+          cloneLast2nd = last2ndSlide.cloneNode(true),
+          cloneLast3rd = last3rdSlide.cloneNode(true),
+          cloneLast4th = last4thSlide.cloneNode(true),
+          index = 0,
+          allowShift = true;
+
+        // Clone first and last slide
+        items.appendChild(cloneFirst);
+        items.appendChild(clone2nd);
+        items.appendChild(clone3rd);
+        items.appendChild(clone4th);
+
+        items.insertBefore(cloneLast4th, firstSlide);
+        items.insertBefore(cloneLast3rd, firstSlide);
+        items.insertBefore(cloneLast2nd, firstSlide);
+        items.insertBefore(cloneLast, firstSlide);
+        wrapper.classList.add("loaded");
+
+        // Mouse events
+        items.onmousedown = dragStart;
+
+        // Touch events
+        items.addEventListener("touchstart", dragStart);
+        items.addEventListener("touchend", dragEnd);
+        items.addEventListener("touchmove", dragAction);
+
+        // Click events
+        //   prev.addEventListener('click', function () { shiftSlide(-1) });
+        //   next.addEventListener('click', function () { shiftSlide(1) });
+
+        // Transition events
+        items.addEventListener("transitionend", checkIndex);
+
+        function dragStart(e) {
+          e = e || window.event;
+          e.preventDefault();
+          posInitial = items.offsetLeft;
+
+          if (e.type == "touchstart") {
+            posX1 = e.touches[0].clientX;
+          } else {
+            posX1 = e.clientX;
+            document.onmouseup = dragEnd;
+            document.onmousemove = dragAction;
+          }
+        }
+
+        function dragAction(e) {
+          e = e || window.event;
+
+          if (e.type == "touchmove") {
+            posX2 = posX1 - e.touches[0].clientX;
+            posX1 = e.touches[0].clientX;
+          } else {
+            posX2 = posX1 - e.clientX;
+            posX1 = e.clientX;
+          }
+          items.style.left = items.offsetLeft - posX2 + "px";
+        }
+
+        function dragEnd(e) {
+          posFinal = items.offsetLeft;
+          if (posFinal - posInitial < -threshold) {
+            shiftSlide(1, "drag");
+          } else if (posFinal - posInitial > threshold) {
+            shiftSlide(-1, "drag");
+          } else {
+            items.style.left = posInitial + "px";
+          }
+
+          document.onmouseup = null;
+          document.onmousemove = null;
+        }
+
+        function shiftSlide(dir, action) {
+          items.classList.add("duration-200");
+          items.classList.add("transition-left");
+
+          if (allowShift) {
+            if (!action) {
+              posInitial = items.offsetLeft;
+            }
+
+            if (dir == 1) {
+              items.style.left = posInitial - slideSize + "px";
+              index++;
+            } else if (dir == -1) {
+              items.style.left = posInitial + slideSize + "px";
+              index--;
+            }
+          }
+
+          allowShift = false;
+        }
+
+        function checkIndex() {
+          items.classList.remove("duration-200");
+          items.classList.remove("transition-left");
+
+          if (index == -1) {
+            items.style.left = -(slidesLength * slideSize) + "px";
+            index = slidesLength - 1;
+          }
+
+          if (index == slidesLength) {
+            items.style.left = -(1 * slideSize) + "px";
+            index = 0;
+          }
+
+          allowShift = true;
+        }
+
+        autoplayslides1 = setInterval(() => {
+          shiftSlide(1);
+        }, 3000);
+
+        slider.addEventListener("mouseover", () => {
+          clearInterval(autoplayslides1);
+        });
+        slider.addEventListener("mouseleave", () => {
+          autoplayslides1 = setInterval(() => {
+            shiftSlide(1);
+          }, 3000);
+        });
+      }
+
+      slide(slider, sliderItems, prev, next);
+    </script>
+
+    <script>
+      var slider3 = document.getElementById("slider_3"),
+        sliderItems_3 = document.getElementById("slides_3"),
+        prev_3 = document.getElementById("prev_3"),
+        next_3 = document.getElementById("next_3");
+
+      function slide_3(wrapper, items, prev, next) {
+        var posX1 = 0,
+          posX2 = 0,
+          posInitial,
+          posFinal,
+          threshold = 100,
+          slides = items.getElementsByClassName("slide"),
+          slidesLength = slides.length,
+          slideSize = items.getElementsByClassName("slide")[0].offsetWidth,
+          firstSlide = slides[0],
+          Slide2nd = slides[1],
+          Slide3rd = slides[2],
+          lastSlide = slides[slidesLength - 1],
+          last2ndSlide = slides[slidesLength - 2],
+          last3rdSlide = slides[slidesLength - 3],
+          cloneFirst = firstSlide.cloneNode(true),
+          clone2nd = Slide2nd.cloneNode(true),
+          clone3rd = Slide3rd.cloneNode(true),
+          cloneLast = lastSlide.cloneNode(true),
+          cloneLast2nd = last2ndSlide.cloneNode(true),
+          cloneLast3rd = last3rdSlide.cloneNode(true),
+          index = 0,
+          allowShift = true;
+
+        // Clone first and last slide
+        items.appendChild(cloneFirst);
+        items.appendChild(clone2nd);
+        items.appendChild(clone3rd);
+
+        items.insertBefore(cloneLast3rd, firstSlide);
+        items.insertBefore(cloneLast2nd, firstSlide);
+        items.insertBefore(cloneLast, firstSlide);
+        wrapper.classList.add("loaded");
+
+        // Mouse events
+        items.onmousedown = dragStart;
+
+        // Touch events
+        items.addEventListener("touchstart", dragStart);
+        items.addEventListener("touchend", dragEnd);
+        items.addEventListener("touchmove", dragAction);
+
+        // Click events
+        prev.addEventListener("click", function () {
+          shiftSlide(-1);
+        });
+        next.addEventListener("click", function () {
+          shiftSlide(1);
+        });
+
+        // Transition events
+        items.addEventListener("transitionend", checkIndex);
+
+        function dragStart(e) {
+          e = e || window.event;
+          e.preventDefault();
+          posInitial = items.offsetLeft;
+
+          if (e.type == "touchstart") {
+            posX1 = e.touches[0].clientX;
+          } else {
+            posX1 = e.clientX;
+            document.onmouseup = dragEnd;
+            document.onmousemove = dragAction;
+          }
+        }
+
+        function dragAction(e) {
+          e = e || window.event;
+
+          if (e.type == "touchmove") {
+            posX2 = posX1 - e.touches[0].clientX;
+            posX1 = e.touches[0].clientX;
+          } else {
+            posX2 = posX1 - e.clientX;
+            posX1 = e.clientX;
+          }
+          items.style.left = items.offsetLeft - posX2 + "px";
+        }
+
+        function dragEnd(e) {
+          posFinal = items.offsetLeft;
+          if (posFinal - posInitial < -threshold) {
+            shiftSlide(1, "drag");
+          } else if (posFinal - posInitial > threshold) {
+            shiftSlide(-1, "drag");
+          } else {
+            items.style.left = posInitial + "px";
+          }
+
+          document.onmouseup = null;
+          document.onmousemove = null;
+        }
+
+        function shiftSlide(dir, action) {
+          items.classList.add("duration-200");
+          items.classList.add("transition-left");
+
+          if (allowShift) {
+            if (!action) {
+              posInitial = items.offsetLeft;
+            }
+
+            if (dir == 1) {
+              items.style.left = posInitial - slideSize + "px";
+              index++;
+            } else if (dir == -1) {
+              items.style.left = posInitial + slideSize + "px";
+              index--;
+            }
+          }
+
+          allowShift = false;
+        }
+
+        function checkIndex() {
+          items.classList.remove("duration-200");
+          items.classList.remove("transition-left");
+
+          if (index == -1) {
+            items.style.left = -(slidesLength * slideSize) + "px";
+            index = slidesLength - 1;
+          }
+
+          if (index == slidesLength) {
+            items.style.left = -(1 * slideSize) + "px";
+            index = 0;
+          }
+
+          allowShift = true;
+        }
+
+        autoplayslides3 = setInterval(() => {
+          shiftSlide(1);
+        }, 3000);
+
+        slider_3.addEventListener("mouseover", () => {
+          clearInterval(autoplayslides3);
+        });
+        slider_3.addEventListener("mouseleave", () => {
+          autoplayslides3 = setInterval(() => {
+            shiftSlide(1);
+          }, 3000);
+        });
+      }
+
+      slide_3(slider_3, sliderItems_3, prev_3, next_3);
+    </script>
+
+    <script>
+      var slider_2 = document.getElementById("slider_2"),
+        sliderItems_2 = document.getElementById("slides_2"),
+        prev_2 = document.getElementById("prev_2"),
+        next_2 = document.getElementById("next_2");
+      // var slider2 = document.getElementById('slider2'),
+      //     sliderItems2 = document.getElementById('slides2'),
+      //     prev2 = document.getElementById('prev2'),
+      //     next2 = document.getElementById('next2');
+
+      function slide_2(wrapper, items, prev, next) {
+        var posX1 = 0,
+          posX2 = 0,
+          posInitial,
+          posFinal,
+          threshold = 100,
+          slides = items.getElementsByClassName("slide"),
+          slidesLength = slides.length,
+          slideSize = items.getElementsByClassName("slide")[0].offsetWidth,
+          firstSlide = slides[0],
+          Slide2nd = slides[1],
+          Slide3rd = slides[2],
+          Slide4th = slides[3],
+          Slide5th = slides[4],
+          lastSlide = slides[slidesLength - 1],
+          last2ndSlide = slides[slidesLength - 2],
+          last3rdSlide = slides[slidesLength - 3],
+          last4thSlide = slides[slidesLength - 4],
+          last5thSlide = slides[slidesLength - 5],
+          cloneFirst = firstSlide.cloneNode(true),
+          clone2nd = Slide2nd.cloneNode(true),
+          clone3rd = Slide3rd.cloneNode(true),
+          clone4th = Slide4th.cloneNode(true),
+          clone5th = Slide5th.cloneNode(true),
+          cloneLast = lastSlide.cloneNode(true),
+          cloneLast2nd = last2ndSlide.cloneNode(true),
+          cloneLast3rd = last3rdSlide.cloneNode(true),
+          cloneLast4th = last4thSlide.cloneNode(true),
+          cloneLast5th = last5thSlide.cloneNode(true),
+          index = 0,
+          allowShift = true;
+
+        // Clone first and last slide
+        items.appendChild(cloneFirst);
+        items.appendChild(clone2nd);
+        items.appendChild(clone3rd);
+        items.appendChild(clone4th);
+        items.appendChild(clone5th);
+
+        items.insertBefore(cloneLast5th, firstSlide);
+        items.insertBefore(cloneLast4th, firstSlide);
+        items.insertBefore(cloneLast3rd, firstSlide);
+        items.insertBefore(cloneLast2nd, firstSlide);
+        items.insertBefore(cloneLast, firstSlide);
+        wrapper.classList.add("loaded");
+
+        // Mouse events
+        items.onmousedown = dragStart;
+
+        // Touch events
+        items.addEventListener("touchstart", dragStart);
+        items.addEventListener("touchend", dragEnd);
+        items.addEventListener("touchmove", dragAction);
+
+        // Click events
+        prev.addEventListener("click", function () {
+          shiftSlide(-1);
+        });
+        next.addEventListener("click", function () {
+          shiftSlide(1);
+        });
+
+        // Transition events
+        items.addEventListener("transitionend", checkIndex);
+
+        function dragStart(e) {
+          e = e || window.event;
+          e.preventDefault();
+          posInitial = items.offsetLeft;
+
+          if (e.type == "touchstart") {
+            posX1 = e.touches[0].clientX;
+          } else {
+            posX1 = e.clientX;
+            document.onmouseup = dragEnd;
+            document.onmousemove = dragAction;
+          }
+        }
+
+        function dragAction(e) {
+          e = e || window.event;
+
+          if (e.type == "touchmove") {
+            posX2 = posX1 - e.touches[0].clientX;
+            posX1 = e.touches[0].clientX;
+          } else {
+            posX2 = posX1 - e.clientX;
+            posX1 = e.clientX;
+          }
+          items.style.left = items.offsetLeft - posX2 + "px";
+        }
+
+        function dragEnd(e) {
+          posFinal = items.offsetLeft;
+          if (posFinal - posInitial < -threshold) {
+            shiftSlide(1, "drag");
+          } else if (posFinal - posInitial > threshold) {
+            shiftSlide(-1, "drag");
+          } else {
+            items.style.left = posInitial + "px";
+          }
+
+          document.onmouseup = null;
+          document.onmousemove = null;
+        }
+
+        function shiftSlide(dir, action) {
+          items.classList.add("duration-200");
+          items.classList.add("transition-left");
+
+          if (allowShift) {
+            if (!action) {
+              posInitial = items.offsetLeft;
+            }
+
+            if (dir == 1) {
+              items.style.left = posInitial - slideSize + "px";
+              index++;
+            } else if (dir == -1) {
+              items.style.left = posInitial + slideSize + "px";
+              index--;
+            }
+          }
+
+          allowShift = false;
+        }
+
+        function checkIndex() {
+          items.classList.remove("duration-200");
+          items.classList.remove("transition-left");
+
+          if (index == -1) {
+            items.style.left = -(slidesLength * slideSize) + "px";
+            index = slidesLength - 1;
+          }
+
+          if (index == slidesLength) {
+            items.style.left = -(1 * slideSize) + "px";
+            index = 0;
+          }
+
+          allowShift = true;
+        }
+
+        autoplayslides = setInterval(() => {
+          shiftSlide(1);
+        }, 1000);
+
+        slider_2.addEventListener("mouseover", () => {
+          clearInterval(autoplayslides);
+        });
+        slider_2.addEventListener("mouseleave", () => {
+          autoplayslides = setInterval(() => {
+            shiftSlide(1);
+          }, 1000);
+        });
+      }
+
+      slide_2(slider_2, sliderItems_2, prev_2, next_2);
+      // slide(slider2, sliderItems2, prev2, next2);
+    </script>
+
+    <script>
+      function demo() {
+            let valueDisplays = document.querySelectorAll(".num");
+            // alert(valueDisplays)
+            let interval = 1000;
+            valueDisplays.forEach((valueDisplay) => {
+                let startValue = 0;
+                let endValue = parseInt(valueDisplay.getAttribute("data_val"));
+
+                // alert(endValue)
+                let duration = Math.floor(interval / endValue);
+                let counter = setInterval(function () {
+                    startValue += 1;
+                    valueDisplay.textContent = startValue;
+                    if (startValue == endValue) {
+                        clearInterval(counter);
+                    }
+                }, duration);
+
+
+            });
+        }
+
+        const handleIntersection = (entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+
+                    demo();
+                    observer.disconnect();    // for only one time execute
+
+                }
+
+            });
+        };
+
+        // Options for the Intersection Observer
+        const options = {
+            root: null, // Use the viewport as the root
+            rootMargin: '0px', // No margin around the root
+            threshold: 0.5 // Trigger callback when 50% of the target is visible
+        };
+
+        // Create an Intersection Observer instance
+        const observer = new IntersectionObserver(handleIntersection, options);
+
+
+        const target = document.getElementById('target');
+
+
+        observer.observe(target);
+    </script>
+  </body>
+</html>
